@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap');
+
+      .proposal-title {
+        font-family: 'Crimson Text', serif;
+        font-size: 11px;
+        fill: #666;
+        letter-spacing: 0.5px;
+      }
+
+      /* Propuesta 1: La Prueba de Imprenta */
+      .logo1-text {
+        font-family: 'Courier Prime', monospace;
+        font-size: 42px;
+        fill: #1a1a1a;
+        letter-spacing: 1px;
+      }
+
+      /* Propuesta 2: Serif Elegante Narrativo */
+      .logo2-text {
+        font-family: 'Crimson Text', serif;
+        font-size: 48px;
+        font-weight: 400;
+        font-style: italic;
+        fill: #1a1a1a;
+        letter-spacing: 0.5px;
+      }
+
+      /* Propuesta 3: Baskerville Editorial */
+      .logo3-text {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 44px;
+        fill: #1a1a1a;
+        letter-spacing: 0.8px;
+      }
+
+      .crop-mark {
+        stroke: #1a1a1a;
+        stroke-width: 0.5;
+        fill: none;
+      }
+
+      .hairline {
+        stroke: #1a1a1a;
+        stroke-width: 0.3;
+        fill: none;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8f8f8"/>
+
+  <!-- PROPUESTA 1: LA PRUEBA DE IMPRENTA (Minimalista Técnico) -->
+  <g id="proposal-1">
+    <text x="80" y="100" class="proposal-title">PROPUESTA 1: LA PRUEBA DE IMPRENTA — Minimalismo técnico, archivo editorial</text>
+
+    <!-- Main logo group -->
+    <g transform="translate(80, 140)">
+      <!-- Crop marks superiores -->
+      <line x1="-10" y1="-10" x2="-10" y2="0" class="crop-mark"/>
+      <line x1="-10" y1="-10" x2="0" y2="-10" class="crop-mark"/>
+      <line x1="340" y1="-10" x2="350" y2="-10" class="crop-mark"/>
+      <line x1="350" y1="-10" x2="350" y2="0" class="crop-mark"/>
+
+      <!-- Texto principal -->
+      <text x="0" y="30" class="logo1-text">la abigarrada</text>
+
+      <!-- Línea técnica superior -->
+      <line x1="0" y1="42" x2="340" y2="42" class="hairline"/>
+
+      <!-- Cuadritos CMYK alineados -->
+      <g transform="translate(85, 55)">
+        <rect x="0" y="0" width="22" height="22" fill="#00A8E1" rx="1"/>
+        <rect x="27" y="0" width="22" height="22" fill="#E0006D" rx="1"/>
+        <rect x="54" y="0" width="22" height="22" fill="#FFD200" rx="1"/>
+        <rect x="81" y="0" width="22" height="22" fill="#1a1a1a" rx="1"/>
+      </g>
+
+      <!-- Línea técnica inferior -->
+      <line x1="0" y1="92" x2="340" y2="92" class="hairline"/>
+
+      <!-- Crop marks inferiores -->
+      <line x1="-10" y1="92" x2="-10" y2="102" class="crop-mark"/>
+      <line x1="-10" y1="102" x2="0" y2="102" class="crop-mark"/>
+      <line x1="340" y1="102" x2="350" y2="102" class="crop-mark"/>
+      <line x1="350" y1="92" x2="350" y2="102" class="crop-mark"/>
+
+      <!-- Registration marks -->
+      <circle cx="170" cy="105" r="2" fill="none" stroke="#1a1a1a" stroke-width="0.3"/>
+      <line x1="170" y1="103" x2="170" y2="107" class="crop-mark"/>
+      <line x1="168" y1="105" x2="172" y2="105" class="crop-mark"/>
+    </g>
+  </g>
+
+  <!-- PROPUESTA 2: NARRATIVA SERIF (Elegancia Editorial) -->
+  <g id="proposal-2">
+    <text x="80" y="320" class="proposal-title">PROPUESTA 2: NARRATIVA SERIF — Elegancia literaria, esencia narrativa</text>
+
+    <g transform="translate(80, 360)">
+      <!-- Texto principal con serif itálico -->
+      <text x="0" y="35" class="logo2-text">la abigarrada</text>
+
+      <!-- Cuadritos CMYK con espaciado sutil -->
+      <g transform="translate(105, 55)">
+        <rect x="0" y="0" width="20" height="20" fill="#00A8E1" rx="2"/>
+        <rect x="25" y="0" width="20" height="20" fill="#E0006D" rx="2"/>
+        <rect x="50" y="0" width="20" height="20" fill="#FFD200" rx="2"/>
+        <rect x="75" y="0" width="20" height="20" fill="#1a1a1a" rx="2"/>
+
+        <!-- Línea decorativa conectando los cuadros -->
+        <line x1="10" y1="25" x2="10" y2="35" stroke="#00A8E1" stroke-width="1" opacity="0.3"/>
+        <line x1="35" y1="25" x2="35" y2="35" stroke="#E0006D" stroke-width="1" opacity="0.3"/>
+        <line x1="60" y1="25" x2="60" y2="35" stroke="#FFD200" stroke-width="1" opacity="0.3"/>
+        <line x1="85" y1="25" x2="85" y2="35" stroke="#1a1a1a" stroke-width="1" opacity="0.3"/>
+      </g>
+
+      <!-- Detalle decorativo serif -->
+      <path d="M 0 48 Q 50 45, 100 48" fill="none" stroke="#1a1a1a" stroke-width="0.5" opacity="0.2"/>
+    </g>
+  </g>
+
+  <!-- PROPUESTA 3: TRAMA EDITORIAL (Baskerville con estructura geométrica) -->
+  <g id="proposal-3">
+    <text x="80" y="540" class="proposal-title">PROPUESTA 3: TRAMA EDITORIAL — Estructura tipográfica, conexión cultural</text>
+
+    <g transform="translate(80, 580)">
+      <!-- Líneas de guía superior (sutiles) -->
+      <line x1="0" y1="0" x2="380" y2="0" class="hairline" opacity="0.3"/>
+
+      <!-- Texto principal -->
+      <text x="0" y="35" class="logo3-text">la abigarrada</text>
+
+      <!-- Línea base -->
+      <line x1="0" y1="45" x2="380" y2="45" class="hairline" opacity="0.5"/>
+
+      <!-- Cuadritos CMYK con composición geométrica -->
+      <g transform="translate(95, 60)">
+        <!-- Cuadros principales -->
+        <rect x="0" y="0" width="24" height="24" fill="#00A8E1" rx="1"/>
+        <rect x="29" y="0" width="24" height="24" fill="#E0006D" rx="1"/>
+        <rect x="58" y="0" width="24" height="24" fill="#FFD200" rx="1"/>
+        <rect x="87" y="0" width="24" height="24" fill="#1a1a1a" rx="1"/>
+
+        <!-- Líneas de conexión geométricas -->
+        <line x1="12" y1="-5" x2="12" y2="0" stroke="#00A8E1" stroke-width="0.8" opacity="0.4"/>
+        <line x1="41" y1="-5" x2="41" y2="0" stroke="#E0006D" stroke-width="0.8" opacity="0.4"/>
+        <line x1="70" y1="-5" x2="70" y2="0" stroke="#FFD200" stroke-width="0.8" opacity="0.4"/>
+        <line x1="99" y1="-5" x2="99" y2="0" stroke="#1a1a1a" stroke-width="0.8" opacity="0.4"/>
+
+        <!-- Grid sutil de fondo -->
+        <line x1="0" y1="12" x2="111" y2="12" stroke="#1a1a1a" stroke-width="0.2" opacity="0.15"/>
+        <line x1="55.5" y1="0" x2="55.5" y2="24" stroke="#1a1a1a" stroke-width="0.2" opacity="0.15"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Nota informativa -->
+  <text x="80" y="850" style="font-family: 'Crimson Text', serif; font-size: 10px; fill: #999;">
+    Tipografías utilizadas: Courier Prime (monospace), Crimson Text (serif itálico), Libre Baskerville (serif editorial) — Todas disponibles en Google Fonts
+  </text>
+  <text x="80" y="870" style="font-family: 'Crimson Text', serif; font-size: 10px; fill: #999;">
+    Paleta CMYK: Cyan #00A8E1 • Magenta #E0006D • Yellow #FFD200 • Black #1a1a1a
+  </text>
+</svg>
