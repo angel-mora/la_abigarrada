@@ -1,0 +1,13 @@
+<div class="inline-flex flex-col" style="font-family: 'Libre Baskerville', serif;">
+  <span style="font-size: <%= font_size %>; color: <%= text_color %>; line-height: 1.1; font-weight: 400; letter-spacing: -0.02em;">
+    la abigarrada
+  </span>
+  
+  <% if @show_subline %>
+    <div class="flex w-full" style="height: 4px; margin-top: 4px;">
+      <% colors.each do |color| %>
+        <div style="flex: 1; background-color: <%= color %>;"></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

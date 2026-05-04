@@ -1,0 +1,25 @@
+<div class="min-h-screen flex flex-col items-center justify-center bg-[#FAFAF8] px-6 text-center">
+  <div class="mb-12">
+    <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :xl, show_subline: true)) %>
+  </div>
+
+  <h1 class="text-4xl md:text-6xl font-bold mb-6 text-[#1A1A1A]" style="font-family: 'DM Sans', sans-serif;">
+    Identidades Múltiples, Destinos Comunes.
+  </h1>
+
+  <p class="max-w-2xl text-xl md:text-2xl text-[#444] leading-relaxed mb-12" style="font-family: 'Libre Baskerville', serif;">
+    Un espacio sobre lo que la modernidad no puede ordenar. La coexistencia de tiempos y culturas que se resisten a la síntesis.
+  </p>
+
+  <div class="flex flex-col sm:flex-row gap-6 mb-20">
+    <%= link_to "Suscríbete al Newsletter", "#", class: "px-8 py-4 bg-[#1A1A1A] text-white font-bold rounded-none hover:bg-[#333] transition-colors", style: "font-family: 'JetBrains Mono', monospace;" %>
+    <%= link_to "Explora los artículos", "#", class: "px-8 py-4 border-2 border-[#1A1A1A] text-[#1A1A1A] font-bold rounded-none hover:bg-[#1A1A1A] hover:text-white transition-colors", style: "font-family: 'JetBrains Mono', monospace;" %>
+  </div>
+
+  <div class="max-w-3xl border-t border-black/10 pt-16">
+    <h2 class="text-3xl font-bold mb-8 text-[#1A1A1A]" style="font-family: 'DM Sans', sans-serif;">Habitar la Contradicción.</h2>
+    <p class="text-lg md:text-xl text-[#555] leading-relaxed italic" style="font-family: 'Libre Baskerville', serif;">
+      "No buscamos la armonía cómoda, sino la polifonía visual y política. Un espacio abigarrado para una realidad compleja."
+    </p>
+  </div>
+</div>
