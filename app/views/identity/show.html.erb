@@ -1,0 +1,78 @@
+<div class="bg-white">
+  <section class="px-8 md:px-16 lg:px-24 py-20" style="background-color: #FAFAF8;">
+    <div class="max-w-4xl">
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(0,0,0,0.35);" class="mb-6">
+        Manual de identidad visual v1.0
+      </p>
+      <div class="mb-12">
+        <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :xl, show_subline: true, line_style: :solid)) %>
+      </div>
+      <div class="max-w-2xl space-y-6 text-[#333]" style="font-family: 'Libre Baskerville', serif;">
+        <p class="text-[1.15rem] leading-[1.8]">
+          <em>Abigarrada</em>: que tiene muchos colores mal combinados. Asi la define la RAE.
+          Pero Rene Zavaleta Mercado resignificó el término para nombrar aquello que la modernidad occidental no puede ordenar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <%# Typography %>
+  <section class="px-8 md:px-16 lg:px-24 py-20 border-t border-black/10">
+    <div class="max-w-5xl">
+      <div class="flex items-baseline gap-4 mb-12">
+        <span class="font-mono text-[0.75rem] text-black/30 tracking-widest">01</span>
+        <h2 class="text-3xl font-bold font-sans uppercase">Tipografía</h2>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-12">
+        <div>
+          <h3 class="font-sans text-4xl font-bold mb-2">DM Sans</h3>
+          <p class="font-mono text-[0.7rem] text-black/40 uppercase mb-4">Títulos / Navegación</p>
+          <p class="font-serif text-[#444] leading-relaxed">
+            Geométrica contemporánea. Su limpieza formal genera una tensión deliberada contra la serif del logotipo.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif text-4xl mb-2">Libre Baskerville</h3>
+          <p class="font-mono text-[0.7rem] text-black/40 uppercase mb-4">Logotipo / Cuerpo editorial</p>
+          <p class="font-serif text-[#444] leading-relaxed">
+            Serif transicional. Es la voz narrativa del proyecto. Cuenta, argumenta, persuade.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-mono text-3xl mb-2">JetBrains Mono</h3>
+          <p class="font-mono text-[0.7rem] text-black/40 uppercase mb-4">Sistema / Metadatos</p>
+          <p class="font-serif text-[#444] leading-relaxed">
+            Monoespaciada: cada carácter ocupa el mismo espacio. Evoca la terminal y el texto sin formatear.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%# Palette Section (Simplified) %>
+  <section class="px-8 md:px-16 lg:px-24 py-20 border-t border-black/10">
+    <div class="max-w-5xl">
+      <div class="flex items-baseline gap-4 mb-12">
+        <span class="font-mono text-[0.75rem] text-black/30 tracking-widest">02</span>
+        <h2 class="text-3xl font-bold font-sans uppercase">Sistema Cromático</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <% [
+          { name: "Wiphala", palette: :wiphala },
+          { name: "Feminista", palette: :feminista },
+          { name: "Panafricana", palette: :panafricana },
+          { name: "LGBTIQA+", palette: :lgbtiq },
+          { name: "CMYK Editorial", palette: :cmyk },
+          { name: "Rojinegra", palette: :rojinegra }
+        ].each do |p| %>
+          <div class="border border-black/5 p-8 bg-[#FAFAF8] flex flex-col items-center">
+            <%= render(Logo::LogoComponent.new(palette: p[:palette], size: :md, show_subline: true, line_style: :segments)) %>
+            <p class="mt-4 font-mono text-[0.65rem] text-black/40 uppercase tracking-widest"><%= p[:name] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>

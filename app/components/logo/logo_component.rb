@@ -10,17 +10,18 @@ module Logo
     }.freeze
 
     SIZES = {
-      sm: "1.25rem",
-      md: "1.75rem",
-      lg: "2.5rem",
+      sm: "1rem",
+      md: "1.5rem",
+      lg: "2.25rem",
       xl: "3.5rem"
     }.freeze
 
-    def initialize(palette: :wiphala, size: :md, show_subline: false, dark_bg: false)
+    def initialize(palette: :wiphala, size: :md, show_subline: false, dark_bg: false, line_style: :solid)
       @palette = palette.to_sym
       @size = size.to_sym
       @show_subline = show_subline
       @dark_bg = dark_bg
+      @line_style = line_style.to_sym # :solid or :segments
     end
 
     private

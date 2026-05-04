@@ -5,8 +5,15 @@
   
   <% if @show_subline %>
     <div class="flex w-full" style="height: 4px; margin-top: 4px;">
-      <% colors.each do |color| %>
-        <div style="flex: 1; background-color: <%= color %>;"></div>
+      <% if @line_style == :segments %>
+        <%# If segmented, we take 4 core segments as per manual %>
+        <% colors.first(4).each do |color| %>
+          <div style="flex: 1; background-color: <%= color %>; margin-right: 2px;" class="last:mr-0"></div>
+        <% end %>
+      <% else %>
+        <% colors.each do |color| %>
+          <div style="flex: 1; background-color: <%= color %>;"></div>
+        <% end %>
       <% end %>
     </div>
   <% end %>
