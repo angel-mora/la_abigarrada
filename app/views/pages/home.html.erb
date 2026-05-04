@@ -1,110 +1,155 @@
-<nav class="sticky top-0 z-50 bg-white/90 dark:bg-[#1A1A1A]/90 backdrop-blur-sm border-b border-black/10 dark:border-white/10 px-6 py-5 transition-colors duration-200">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <%= link_to root_path do %>
+<nav class="sticky top-0 z-50 bg-[#FAFAF8] dark:bg-[#111] border-b-4 border-black dark:border-white px-4 py-3 transition-colors duration-200">
+  <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+    <%= link_to root_path, class: "hover:-translate-y-0.5 transition-transform" do %>
       <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :sm, show_subline: true, line_style: :segments)) %>
     <% end %>
 
-    <div class="hidden lg:flex gap-10 items-center" style="font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
-      <%= link_to "Observatorio", "#", class: "text-[#1A1A1A] dark:text-[#FAFAF8] hover:text-black/50 dark:hover:text-white/50 transition-colors" %>
-      <%= link_to "Comunidad", "#", class: "text-[#1A1A1A] dark:text-[#FAFAF8] hover:text-black/50 dark:hover:text-white/50 transition-colors" %>
-      <%= link_to "Revista", "#", class: "text-[#1A1A1A] dark:text-[#FAFAF8] hover:text-black/50 dark:hover:text-white/50 transition-colors" %>
-      <%= link_to "Editorial", "#", class: "text-[#1A1A1A] dark:text-[#FAFAF8] hover:text-black/50 dark:hover:text-white/50 transition-colors" %>
-      <%= link_to "Colaboraciones", "#", class: "text-[#1A1A1A] dark:text-[#FAFAF8] hover:text-black/50 dark:hover:text-white/50 transition-colors" %>
+    <div class="hidden lg:flex gap-8 items-center" style="font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;">
+      <%= link_to "Observatorio", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
+      <%= link_to "Comunidad", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
+      <%= link_to "Revista", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
+      <%= link_to "Editorial", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
+      <%= link_to "Colaboraciones", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
     </div>
 
-    <div class="flex items-center gap-6">
-      <button onclick="toggleDarkMode()" class="text-xl p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors" aria-label="Toggle dark mode">
+    <div class="flex items-center gap-4">
+      <button onclick="toggleDarkMode()" class="text-2xl hover:scale-110 transition-transform" aria-label="Toggle dark mode">
         <span class="dark:hidden">🌙</span>
         <span class="hidden dark:inline">☀️</span>
       </button>
-      <%= link_to "Suscríbete", "#", class: "px-5 py-2.5 bg-[#1A1A1A] dark:bg-[#FAFAF8] text-white dark:text-[#1A1A1A] text-[0.7rem] font-bold uppercase tracking-widest", style: "font-family: 'JetBrains Mono', monospace;" %>
+      <%= link_to "Suscríbete", "#", class: "px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-[0.8rem] font-bold uppercase tracking-widest border-2 border-black dark:border-white hover:bg-[#E21C21] hover:text-black dark:hover:bg-[#E21C21] transition-colors shadow-[4px_4px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_rgba(255,255,255,1)]", style: "font-family: 'JetBrains Mono', monospace;" %>
     </div>
   </div>
 </nav>
 
-<main class="dark:bg-[#1A1A1A]">
-  <%# Hero Section: Professional Blog Typography, No Logo %>
-  <section class="relative flex flex-col items-center justify-center px-6 py-32 bg-white dark:bg-[#1A1A1A] transition-colors duration-200">
-    <div class="relative z-10 text-center max-w-4xl">
-      <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-[1.1] text-[#1A1A1A] dark:text-[#FAFAF8] tracking-tight" style="font-family: 'DM Sans', sans-serif;">
-        Identidades Múltiples.
-      </h1>
-
-      <p class="max-w-2xl mx-auto text-xl md:text-2xl text-[#444] dark:text-gray-300 leading-relaxed mb-12" style="font-family: 'Libre Baskerville', serif;">
-        Un blog sobre lo que la modernidad no puede ordenar. La coexistencia de tiempos y culturas que se resisten a la síntesis.
-      </p>
-
-      <div class="flex flex-col sm:flex-row justify-center gap-6">
-        <%= link_to "#", class: "px-10 py-4 bg-[#1A1A1A] dark:bg-[#FAFAF8] text-white dark:text-[#1A1A1A] font-bold text-sm tracking-widest uppercase transition-colors hover:bg-[#333] dark:hover:bg-white", style: "font-family: 'JetBrains Mono', monospace;" do %>
-          Explora los artículos
+<main class="dark:bg-[#111]">
+  <%# BRUTALIST HERO (Manifesto Focus) %>
+  <section class="relative px-4 py-20 md:py-32 bg-[#FAFAF8] dark:bg-[#111] overflow-hidden border-b-4 border-black dark:border-white transition-colors duration-200">
+    <div class="max-w-[1400px] mx-auto grid md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-8 lg:col-span-9 relative z-10">
+        <div class="inline-block bg-black text-white dark:bg-white dark:text-black px-4 py-2 mb-8 font-mono text-sm font-bold uppercase tracking-widest rotate-[-2deg] shadow-[4px_4px_0px_#E21C21]">
+          Manifiesto v1.0
+        </div>
+        <h1 class="text-6xl md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] text-black dark:text-white tracking-tighter uppercase" style="font-family: 'DM Sans', sans-serif;">
+          Identidades <br/>
+          <span class="text-transparent" style="-webkit-text-stroke: 2px currentColor;">Múltiples.</span>
+        </h1>
+        <div class="mt-12 max-w-2xl border-l-8 border-[#E21C21] pl-6">
+          <p class="text-2xl md:text-3xl text-black dark:text-gray-300 leading-snug" style="font-family: 'Libre Baskerville', serif;">
+            Un laboratorio de pensamiento crítico, feminismos y observatorio antifascista de Latinoamérica.
+          </p>
+        </div>
+      </div>
+      
+      <div class="md:col-span-4 lg:col-span-3 flex flex-col gap-6 relative z-10">
+        <p class="text-lg text-black/70 dark:text-gray-400 font-mono uppercase tracking-widest leading-relaxed border-t-2 border-black dark:border-white pt-6">
+          La modernidad occidental no nos puede ordenar.
+        </p>
+        <%= link_to "#", class: "group block px-8 py-6 bg-[#FBED21] text-black border-4 border-black font-bold text-xl uppercase tracking-widest hover:bg-black hover:text-white transition-all shadow-[8px_8px_0px_rgba(0,0,0,1)]", style: "font-family: 'DM Sans', sans-serif;" do %>
+          Leer la Revista
+          <span class="block mt-2 font-mono text-xs opacity-60 group-hover:opacity-100">Transmisión Abierta →</span>
         <% end %>
       </div>
     </div>
-  </section>
-
-  <%# Manifiesto Section %>
-  <section class="py-24 px-6 bg-[#FAFAF8] dark:bg-[#111] border-t border-black/10 dark:border-white/10 transition-colors duration-200">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8 tracking-tight text-[#1A1A1A] dark:text-[#FAFAF8]" style="font-family: 'DM Sans', sans-serif;">Habitar la Contradicción.</h2>
-      <p class="text-lg md:text-xl leading-[1.8] text-[#333] dark:text-gray-300" style="font-family: 'Libre Baskerville', serif;">
-        No buscamos la armonía cómoda, sino la polifonía visual y política. Un espacio abigarrado para una realidad compleja.
-      </p>
+    
+    <%# Background brutalist typography %>
+    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[200%] text-[25rem] font-black uppercase text-black/5 dark:text-white/5 whitespace-nowrap pointer-events-none select-none z-0" style="font-family: 'DM Sans', sans-serif;">
+      LA ABIGARRADA
     </div>
   </section>
 
-  <%# Blog Articles Preview (Standard Blog Grid) %>
-  <section class="py-24 px-6 bg-white dark:bg-[#1A1A1A] border-t border-black/10 dark:border-white/10 transition-colors duration-200">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex items-center justify-between mb-12">
-        <h2 class="text-2xl font-bold font-sans text-[#1A1A1A] dark:text-[#FAFAF8]">Últimos artículos</h2>
-        <%= link_to "Ver todos →", "#", class: "text-sm font-bold font-mono tracking-widest uppercase hover:underline dark:text-gray-400" %>
+  <%# ASYMMETRIC GRID (Articles + Sections) %>
+  <section class="bg-black dark:bg-white p-4 transition-colors duration-200">
+    <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-min">
+      
+      <%# Main Featured Article (Large) %>
+      <article class="md:col-span-8 md:row-span-2 bg-[#FAFAF8] dark:bg-[#111] border-4 border-black dark:border-white p-8 md:p-12 flex flex-col justify-between group hover:bg-[#F39A1E] dark:hover:bg-[#F39A1E] transition-colors cursor-pointer">
+        <div class="flex justify-between items-start mb-16">
+          <span class="bg-black text-white dark:bg-white dark:text-black px-3 py-1 font-mono text-xs uppercase font-bold tracking-widest">Ensayo</span>
+          <span class="font-mono text-xs font-bold text-black dark:text-white group-hover:text-black">15 ABR 2026</span>
+        </div>
+        <div>
+          <h2 class="text-5xl md:text-7xl font-black text-black dark:text-white group-hover:text-black leading-[0.9] tracking-tight mb-6" style="font-family: 'DM Sans', sans-serif;">
+            La crisis de la modernidad en el Sur Global.
+          </h2>
+          <p class="text-xl text-black/80 dark:text-gray-300 group-hover:text-black/90 font-serif leading-relaxed max-w-3xl">
+            Un análisis profundo sobre cómo las estructuras políticas contemporáneas fallan en contener la diversidad de proyectos de vida, y por qué la respuesta está en el abigarramiento.
+          </p>
+        </div>
+      </article>
+
+      <%# Newsletter CTA (Small block) %>
+      <div class="md:col-span-4 bg-[#E21C21] border-4 border-black dark:border-white p-8 flex flex-col justify-center text-black">
+        <h3 class="text-3xl font-black mb-4 uppercase leading-none" style="font-family: 'DM Sans', sans-serif;">La Señal en <br/>la Tormenta.</h3>
+        <p class="font-mono text-sm mb-6 font-bold">Recibe nuestras alertas antifascistas y nuevos textos directo en tu correo.</p>
+        <input type="email" placeholder="TU CORREO AQUÍ" class="w-full bg-[#FAFAF8] border-2 border-black p-3 mb-4 font-mono text-sm focus:outline-none focus:ring-4 focus:ring-black">
+        <button class="w-full bg-black text-white font-bold font-mono py-3 uppercase tracking-widest hover:bg-[#FAFAF8] hover:text-black transition-colors border-2 border-black">
+          Suscribir
+        </button>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-12">
-        <% 3.times do |i| %>
-          <article class="flex flex-col group cursor-pointer">
-            <div class="h-48 bg-[#FAFAF8] dark:bg-[#222] border border-black/10 dark:border-white/10 mb-6 flex items-center justify-center p-8 transition-colors duration-200">
-               <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :lg, show_subline: true, line_style: :segments)) %>
-            </div>
-            <div class="flex items-center gap-4 mb-4">
-              <span class="text-[0.7rem] font-bold font-mono uppercase tracking-widest text-[#1A1A1A] dark:text-gray-400">Observatorio</span>
-              <span class="text-[0.7rem] font-mono text-gray-500">Abril 15, 2026</span>
-            </div>
-            <h3 class="text-xl font-bold mb-3 font-sans text-[#1A1A1A] dark:text-[#FAFAF8] group-hover:underline">La crisis de la modernidad en el Sur Global</h3>
-            <p class="text-sm leading-relaxed text-[#444] dark:text-gray-400 font-serif">
-              Un análisis sobre cómo las estructuras políticas contemporáneas fallan en contener la diversidad de proyectos de vida...
-            </p>
-          </article>
-        <% end %>
+      <%# Secondary Article %>
+      <article class="md:col-span-4 bg-[#FAFAF8] dark:bg-[#111] border-4 border-black dark:border-white p-8 flex flex-col group hover:bg-[#3DB34A] dark:hover:bg-[#3DB34A] transition-colors cursor-pointer">
+        <span class="self-start border-2 border-black dark:border-white text-black dark:text-white px-2 py-1 font-mono text-[0.6rem] uppercase font-bold tracking-widest mb-6 group-hover:border-black group-hover:text-black">Observatorio</span>
+        <h3 class="text-3xl font-bold text-black dark:text-white group-hover:text-black leading-tight mb-4" style="font-family: 'DM Sans', sans-serif;">
+          Cartografía del nuevo fascismo digital.
+        </h3>
+        <p class="text-black/70 dark:text-gray-400 group-hover:text-black/80 font-serif text-sm mt-auto">
+          Mapeando la desinformación en redes.
+        </p>
+      </article>
+
+      <%# Info Block %>
+      <div class="md:col-span-4 bg-[#6E3B8E] border-4 border-black dark:border-white p-8 text-[#FAFAF8] flex flex-col justify-center">
+        <div class="mb-4"><%= render(Logo::LogoComponent.new(palette: :wiphala, size: :lg, show_subline: true, line_style: :segments, dark_bg: true)) %></div>
+        <p class="font-serif text-lg leading-snug">
+          "No buscamos la armonía cómoda, sino la polifonía visual y política. Un espacio abigarrado para una realidad compleja."
+        </p>
       </div>
+
+      <%# Third Article %>
+      <article class="md:col-span-8 bg-[#FAFAF8] dark:bg-[#111] border-4 border-black dark:border-white p-8 flex flex-col group hover:bg-[#2E3091] hover:text-white dark:hover:bg-[#2E3091] transition-colors cursor-pointer">
+        <div class="flex justify-between items-start mb-8">
+          <span class="text-black dark:text-white group-hover:text-white font-mono text-[0.6rem] uppercase font-bold tracking-widest">Comunidad</span>
+          <span class="text-black dark:text-white group-hover:text-white font-serif italic text-sm">Por Ninoska Durán</span>
+        </div>
+        <h3 class="text-4xl md:text-5xl font-black text-black dark:text-white group-hover:text-white leading-[0.95] mb-4" style="font-family: 'DM Sans', sans-serif;">
+          Feminismos en tiempos de urgencia.
+        </h3>
+        <p class="text-black/70 dark:text-gray-400 group-hover:text-white/80 font-serif mt-auto max-w-2xl">
+          La red de afectos como primera línea de defensa política y organización colectiva.
+        </p>
+      </article>
+
     </div>
   </section>
 </main>
 
-<footer class="bg-[#1A1A1A] text-[#FAFAF8] py-20 px-6">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-    <div>
-      <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :md, show_subline: true, dark_bg: true, line_style: :segments)) %>
-      <p class="mt-6 text-[#FAFAF8]/50 max-w-xs text-sm leading-relaxed" style="font-family: 'Libre Baskerville', serif;">
-        Laboratorio de pensamiento crítico, feminismos y observatorio antifascista de Latinoamérica.
+<footer class="bg-[#FAFAF8] dark:bg-[#111] text-black dark:text-white py-20 px-4 border-t-4 border-black dark:border-white transition-colors duration-200">
+  <div class="max-w-[1400px] mx-auto grid md:grid-cols-4 gap-12 border-b-4 border-black dark:border-white pb-16">
+    <div class="md:col-span-2">
+      <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :md, show_subline: true, line_style: :segments)) %>
+      <p class="mt-8 text-xl font-black uppercase tracking-tight max-w-sm leading-none" style="font-family: 'DM Sans', sans-serif;">
+        Laboratorio de pensamiento crítico latinoamericano.
       </p>
     </div>
     
-    <div class="grid grid-cols-2 gap-16" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em;">
-      <div class="flex flex-col gap-4">
-        <span class="text-white/30">Navegación</span>
-        <%= link_to "Inicio", root_path, class: "hover:text-white" %>
-        <%= link_to "Manual", identity_manual_path, class: "hover:text-white" %>
-      </div>
-      <div class="flex flex-col gap-4">
-        <span class="text-white/30">Contacto</span>
-        <%= link_to "Email", "#", class: "hover:text-white" %>
-        <%= link_to "Instagram", "#", class: "hover:text-white" %>
-      </div>
+    <div class="flex flex-col gap-4 font-mono text-sm font-bold uppercase tracking-widest">
+      <span class="text-[#E21C21]">Navegación</span>
+      <%= link_to "Inicio", root_path, class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
+      <%= link_to "Revista", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
+      <%= link_to "Manual Identidad", identity_manual_path, class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
+    </div>
+
+    <div class="flex flex-col gap-4 font-mono text-sm font-bold uppercase tracking-widest">
+      <span class="text-[#E21C21]">Redes</span>
+      <%= link_to "Instagram", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
+      <%= link_to "X / Twitter", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
+      <%= link_to "Contacto", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
     </div>
   </div>
-  <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 flex justify-between items-center text-[0.65rem] text-white/30 uppercase tracking-widest" style="font-family: 'JetBrains Mono', monospace;">
+  <div class="max-w-[1400px] mx-auto mt-6 flex justify-between items-center text-[0.6rem] font-bold uppercase tracking-[0.3em] font-mono">
     <span>la abigarrada © 2026</span>
-    <span>v1.0</span>
+    <span>Transmisión Abierta</span>
   </div>
 </footer>
