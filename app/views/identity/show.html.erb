@@ -1,4 +1,4 @@
-<div class="bg-white">
+<div class="bg-white" style="font-family: 'Libre Baskerville', serif;">
   <%# HERO SECTION %>
   <section class="min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20" style="background-color: #FAFAF8;">
     <div class="max-w-4xl">
@@ -8,7 +8,7 @@
       <div class="mb-12">
         <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :xl, show_subline: true, line_style: :solid)) %>
       </div>
-      <div class="max-w-2xl space-y-6" style="font-family: 'Libre Baskerville', serif; color: #333;">
+      <div class="max-w-2xl space-y-6" style="color: #333;">
         <p style="font-size: 1.15rem; line-height: 1.8;">
           <em>Abigarrada</em>: que tiene muchos colores mal combinados. Asi la define la RAE.
           Pero Rene Zavaleta Mercado, sociologo boliviano, resignifico el termino para nombrar
@@ -32,7 +32,7 @@
         <h2 style="font-family: 'DM Sans', sans-serif; font-size: 1.75rem; color: #1A1A1A; line-height: 1.3; font-weight: 700;">Tipografia</h2>
       </div>
 
-      <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-16">
+      <div style="color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-16">
         <p class="mb-4">
           El sistema tipografico de "la abigarrada" tiene tres voces, cada una con un registro distinto.
           No es redundancia: es polifonia. Asi como el proyecto pone en dialogo identidades que normalmente
@@ -45,9 +45,9 @@
           <h3 style="font-family: 'DM Sans', sans-serif; font-size: 2.25rem; line-height: 1.15; color: #1A1A1A; font-weight: 700;" class="mb-2">DM Sans</h3>
           <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(0,0,0,0.4); text-transform: uppercase;" class="mb-2">Titulos / Navegacion</p>
           <p style="font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: rgba(0,0,0,0.25); letter-spacing: 0.03em;" class="mb-6">AaBbCcDdEeFfGgHhIiJj</p>
-          <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.8; font-size: 0.9rem;">
+          <div style="color: #444; line-height: 1.8; font-size: 0.9rem;">
             <p class="mb-4">Geometrica contemporanea. Su limpieza formal genera una tension deliberada contra la serif del logotipo: donde Baskerville es clasica, DM Sans es abiertamente moderna.</p>
-            <p><strong>Decision curatorial:</strong> Elegimos DM Sans sobre opciones mas "seguras" (Work Sans, Source Sans) porque el proyecto necesita friccion visual, no armonia comoda.</p>
+            <p><strong>Decision curatorial:</strong> Elegimos DM Sans sobre opciones mas "seguras" (Work Sans, Source Sans) porque el proyecto necesita friccion visual, no armonia comoda. Esa tension entre clasico y contemporaneo replica a nivel tipografico lo que "la abigarrada" hace a nivel politico.</p>
           </div>
         </div>
 
@@ -55,9 +55,9 @@
           <h3 style="font-family: 'Libre Baskerville', serif; font-size: 2.25rem; line-height: 1.15; color: #1A1A1A;" class="mb-2">Libre Baskerville</h3>
           <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(0,0,0,0.4); text-transform: uppercase;" class="mb-2">Logotipo / Cuerpo editorial</p>
           <p style="font-family: 'Libre Baskerville', serif; font-size: 0.85rem; color: rgba(0,0,0,0.25); letter-spacing: 0.03em;" class="mb-6">AaBbCcDdEeFfGgHhIiJj</p>
-          <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.8; font-size: 0.9rem;">
+          <div style="color: #444; line-height: 1.8; font-size: 0.9rem;">
             <p class="mb-4">Serif transicional: nacio entre el viejo estilo y la modernidad tipografica. Esa condicion liminal la hace perfecta para un proyecto que habita entre mundos.</p>
-            <p>Es la voz narrativa del proyecto. Cuenta, argumenta, persuade.</p>
+            <p>Es la voz narrativa del proyecto. Cuenta, argumenta, persuade. Su version libre (Google Fonts) es coherente con la etica de acceso abierto.</p>
           </div>
         </div>
 
@@ -65,9 +65,9 @@
           <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 1.75rem; line-height: 1.25; color: #1A1A1A;" class="mb-2">JetBrains Mono</h3>
           <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(0,0,0,0.4); text-transform: uppercase;" class="mb-2">Sistema / Etiquetas / Metadatos</p>
           <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: rgba(0,0,0,0.25); letter-spacing: 0.03em;" class="mb-6">AaBbCcDdEeFfGgHhIiJj</p>
-          <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.8; font-size: 0.9rem;">
+          <div style="color: #444; line-height: 1.8; font-size: 0.9rem;">
             <p class="mb-4">Monoespaciada: cada caracter ocupa el mismo espacio. Esa igualdad formal es, tambien, una posicion politica. Evoca la terminal, el texto sin formatear.</p>
-            <p>Solo aparece en texto pequeno de sistema: numeros de seccion, etiquetas de paleta.</p>
+            <p>Solo aparece en texto pequeno de sistema: numeros de seccion, etiquetas de paleta, dimensiones tecnicas. Es la voz que clasifica sin jerarquizar.</p>
           </div>
         </div>
       </div>
@@ -75,8 +75,8 @@
       <div class="mt-16 p-10" style="background-color: #FAFAF8; border: 1px solid rgba(0,0,0,0.05);">
         <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(0,0,0,0.3);" class="mb-4">Ejemplo de convivencia tipografica</p>
         <h3 style="font-family: 'DM Sans', sans-serif; font-size: 1.75rem; font-weight: 700; color: #1A1A1A; line-height: 1.25;" class="mb-4">Abigarramiento y coexistencia: un dialogo pendiente</h3>
-        <p style="font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: #555; line-height: 1.8;" class="mb-3">La coexistencia simultanea de temporalidades, culturas y proyectos politicos que no se disuelven en una sintesis unica. Zavaleta Mercado nos enseno que lo abigarrado no es caos: es una forma distinta de orden.</p>
-        <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(0,0,0,0.35);">Publicado el 15 de abril, 2026 — Etiquetas: teoria critica, Zavaleta Mercado</p>
+        <p style="font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: #555; line-height: 1.8;" class="mb-3">La coexistencia simultanea de temporalidades, culturas y proyectos politicos que no se disuelven en una sintesis unica. Zavaleta Mercado nos enseno que lo abigarrado no es caos: es una forma distinta de orden, una donde las partes no necesitan renunciar a si mismas para formar un todo.</p>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(0,0,0,0.35);">Publicado el 15 de abril, 2026 — Etiquetas: teoria critica, Zavaleta Mercado, plurinacionalidad</p>
       </div>
     </div>
   </section>
@@ -89,7 +89,7 @@
         <h2 style="font-family: 'DM Sans', sans-serif; font-size: 1.75rem; color: #1A1A1A; line-height: 1.3; font-weight: 700;">Sistema cromatico</h2>
       </div>
 
-      <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-12">
+      <div style="color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-12">
         <p class="mb-4">
           El sistema cromatico de "la abigarrada" no tiene una paleta primaria y paletas secundarias.
           <strong> Tiene cinco paletas coiguales</strong>, cada una anclada a un movimiento politico-cultural.
@@ -97,7 +97,9 @@
         </p>
         <p>
           <strong>Decision curatorial:</strong> Proponemos la Wiphala como paleta por defecto, no por jerarquia,
-          sino porque sus siete colores contienen el espectro cromatico completo.
+          sino porque sus siete colores contienen el espectro cromatico completo, funcionando como un
+          "meta-arcoiris" que dialoga con todas las demas paletas. Ademas, el concepto de abigarramiento
+          nace del pensamiento andino, lo que crea coherencia semiotica entre nombre e identidad visual.
         </p>
       </div>
 
@@ -113,6 +115,16 @@
           <h4 style="font-family: 'Libre Baskerville', serif; font-size: 1.25rem; color: #1A1A1A;" class="mb-2 uppercase"><%= key %></h4>
         </div>
       <% end %>
+
+      <%# Logo preview with active palette (Using Wiphala as default representation) %>
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+        <div class="flex items-center justify-center p-12" style="background-color: #FAFAF8; border: 1px solid rgba(0,0,0,0.06);">
+          <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :lg, show_subline: true)) %>
+        </div>
+        <div class="flex items-center justify-center p-12" style="background-color: #2A2A2A;">
+          <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :lg, show_subline: true, dark_bg: true)) %>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -124,10 +136,16 @@
         <h2 style="font-family: 'DM Sans', sans-serif; font-size: 1.75rem; color: #1A1A1A; line-height: 1.3; font-weight: 700;">Mutaciones del logo</h2>
       </div>
       
-      <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-16">
+      <div style="color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-16">
         <p class="mb-4">
           Cada variacion es una toma de posicion. Cuando "la abigarrada" publica contenido sobre
-          derechos de pueblos originarios, el logo lleva la Wiphala. <strong>El logo no decora: declara.</strong>
+          derechos de pueblos originarios, el logo lleva la Wiphala. Cuando el tema es genero,
+          lleva la paleta feminista. <strong>El logo no decora: declara.</strong>
+        </p>
+        <p>
+          <strong>Decision curatorial:</strong> Las lineas debajo del texto funcionan como un subrayado politico.
+          Estan debajo porque sostienen: son la base material-ideologica sobre la que se construye el discurso.
+          No envuelven, no decoran al costado, no flotan: <em>soportan</em>.
         </p>
       </div>
 
@@ -135,7 +153,7 @@
         <% Logo::LogoComponent::PALETTES.keys.each do |key| %>
           <div>
             <div class="flex items-center justify-center p-10 mb-4" style="background-color: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); min-height: 160px;">
-              <%= render(Logo::LogoComponent.new(palette: key, size: :md, show_subline: true, line_style: :solid)) %>
+              <%= render(Logo::LogoComponent.new(palette: key, size: :md, show_subline: true)) %>
             </div>
             <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(0,0,0,0.4); text-transform: uppercase;">Variacion <%= key %></p>
           </div>
@@ -148,24 +166,82 @@
           <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: rgba(0,0,0,0.4); text-transform: uppercase;">Variacion segmentada</p>
         </div>
       </div>
+
+      <%# DARK BACKGROUNDS GRID %>
+      <h4 style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(0,0,0,0.35);" class="mt-16 mb-8">
+        Sobre fondo oscuro
+      </h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <% Logo::LogoComponent::PALETTES.keys.each do |key| %>
+          <div class="flex items-center justify-center p-10" style="background-color: #2A2A2A; min-height: 160px;">
+            <%= render(Logo::LogoComponent.new(palette: key, size: :md, show_subline: true, dark_bg: true)) %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </section>
 
-  <%# PROFILE ICONS SECTION (Skipping complex SVG logic for brevity, relying on logo segments) %>
+  <%# PROFILE ICONS SECTION %>
   <section class="px-8 md:px-16 lg:px-24 py-20" style="border-top: 1px solid rgba(0,0,0,0.08);">
     <div class="max-w-5xl">
       <div class="flex items-baseline gap-4">
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: rgba(0,0,0,0.25); letter-spacing: 0.1em;">04</span>
         <h2 style="font-family: 'DM Sans', sans-serif; font-size: 1.75rem; color: #1A1A1A; line-height: 1.3; font-weight: 700;">Icono de perfil / avatar</h2>
       </div>
-      <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-12">
+      <div style="color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-12">
         <p class="mb-4">
           Para escalas pequenas (avatares de redes sociales, favicons, app icons) el logotipo completo colapsa.
           La marca se reduce a <strong>"la_"</strong>: el articulo femenino seguido de un guion bajo que es, en realidad, una version compacta de la franja segmentada.
         </p>
+        <p>
+          <strong>Decision curatorial:</strong> El guion bajo no es tipografico: es la barra del logo sintetizada en cuatro segmentos.
+          La paleta del icono <em>siempre</em> coincide con la del logo principal.
+        </p>
       </div>
-      <div class="p-12 border border-black/10 bg-[#FAFAF8] inline-flex">
-         <span style="font-family: 'Libre Baskerville', serif; font-size: 3rem; color: #1A1A1A; line-height: 1.1;">la_</span>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <div class="flex items-center justify-center p-12" style="background-color: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); min-height: 220px;">
+          <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :md, show_subline: true)) %>
+        </div>
+        <div class="flex items-center justify-center p-12 gap-8" style="background-color: #FAFAF8; border: 1px solid rgba(0,0,0,0.06); min-height: 220px;">
+          <%= render(Logo::ProfileIconComponent.new(palette: :wiphala, size: 120)) %>
+        </div>
+      </div>
+
+      <h4 style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(0,0,0,0.35);" class="mb-8">
+        Escalas operativas
+      </h4>
+      <div class="flex flex-wrap items-end gap-10 mb-16 p-10" style="background-color: #FAFAF8; border: 1px solid rgba(0,0,0,0.06);">
+        <% [160, 96, 64, 48, 32].each do |s| %>
+          <div class="flex flex-col items-center gap-3">
+            <%= render(Logo::ProfileIconComponent.new(palette: :wiphala, size: s)) %>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: rgba(0,0,0,0.4); letter-spacing: 0.1em;"><%= s %>px</span>
+          </div>
+        <% end %>
+      </div>
+
+      <h4 style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(0,0,0,0.35);" class="mb-8">
+        Variaciones por paleta
+      </h4>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
+        <% Logo::LogoComponent::PALETTES.keys.each do |key| %>
+          <div class="flex flex-col items-center gap-3">
+            <%= render(Logo::ProfileIconComponent.new(palette: key, size: 96)) %>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: rgba(0,0,0,0.5); letter-spacing: 0.05em; text-transform: uppercase;"><%= key %></span>
+          </div>
+        <% end %>
+      </div>
+
+      <h4 style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(0,0,0,0.35);" class="mb-8">
+        Sobre fondo oscuro
+      </h4>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 p-8" style="background-color: #2A2A2A;">
+        <% Logo::LogoComponent::PALETTES.keys.each do |key| %>
+          <div class="flex flex-col items-center gap-3">
+            <%= render(Logo::ProfileIconComponent.new(palette: key, size: 96, dark_bg: true)) %>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; text-transform: uppercase;"><%= key %></span>
+          </div>
+        <% end %>
       </div>
     </div>
   </section>
@@ -181,34 +257,46 @@
       <div class="grid md:grid-cols-2 gap-16 mt-12">
         <div>
           <div class="flex items-center gap-2 mb-8">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #009639; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #FFF; font-size: 0.8rem;">&#10003;</span>
+            </div>
             <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #009639;">Si</span>
           </div>
           <div class="space-y-6">
             <div style="border-left: 2px solid #009639; padding-left: 16px;">
-              <p style="font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">Usar la paleta completa de cada variacion sin omitir colores</p>
+              <p style="font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">Usar la paleta completa de cada variacion sin omitir colores</p>
+              <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(0,0,0,0.4); line-height: 1.5;">Omitir un color de la Wiphala o la Progress Flag es omitir una identidad.</p>
             </div>
             <div style="border-left: 2px solid #009639; padding-left: 16px;">
-              <p style="font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">Elegir la paleta segun el contenido editorial</p>
+              <p style="font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">Elegir la paleta segun el contenido editorial</p>
+              <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(0,0,0,0.4); line-height: 1.5;">El logo-como-declaracion solo funciona si la mutacion es intencional y contextual.</p>
             </div>
             <div style="border-left: 2px solid #009639; padding-left: 16px;">
-              <p style="font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">Usar siempre minusculas en 'la abigarrada'</p>
+              <p style="font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">Usar siempre minusculas en 'la abigarrada'</p>
+              <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(0,0,0,0.4); line-height: 1.5;">Las minusculas son una posicion anti-jerarquica. No hay mayusculas porque no hay capital.</p>
             </div>
           </div>
         </div>
 
         <div>
           <div class="flex items-center gap-2 mb-8">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background-color: #C8102E; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #FFF; font-size: 0.8rem;">&#10007;</span>
+            </div>
             <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #C8102E;">No</span>
           </div>
           <div class="space-y-6">
             <div style="border-left: 2px solid #C8102E; padding-left: 16px;">
-              <p style="font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">No mezclar colores de distintas paletas en una sola instancia</p>
+              <p style="font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">No mezclar colores de distintas paletas en una sola instancia</p>
+              <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(0,0,0,0.4); line-height: 1.5;">Cada paleta es un enunciado coherente. Mezclarlas trivializa las identidades que representan.</p>
             </div>
             <div style="border-left: 2px solid #C8102E; padding-left: 16px;">
-              <p style="font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">No usar el logo en escala de grises</p>
+              <p style="font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">No usar el logo en escala de grises</p>
+              <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(0,0,0,0.4); line-height: 1.5;">El color es constitutivo, no decorativo. Sin color, el logo pierde su dimension politica.</p>
             </div>
             <div style="border-left: 2px solid #C8102E; padding-left: 16px;">
-              <p style="font-family: 'Libre Baskerville', serif; font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">No cambiar la tipografia del logotipo</p>
+              <p style="font-size: 0.95rem; color: #1A1A1A; line-height: 1.6;" class="mb-1">No cambiar la tipografia del logotipo</p>
+              <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: rgba(0,0,0,0.4); line-height: 1.5;">Libre Baskerville fue elegida por su condicion transicional. Otra serif no carga el mismo significado.</p>
             </div>
           </div>
         </div>
@@ -223,9 +311,21 @@
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: rgba(0,0,0,0.25); letter-spacing: 0.1em;">06</span>
         <h2 style="font-family: 'DM Sans', sans-serif; font-size: 1.75rem; color: #1A1A1A; line-height: 1.3; font-weight: 700;">Templates para redes sociales</h2>
       </div>
-      <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-12">
+      <div style="color: #444; line-height: 1.8;" class="mt-8 max-w-2xl mb-12">
         <p class="mb-4">Cada template replica la logica del logo: el contenido se sostiene sobre las lineas de color. Las barras de color siempre van en la parte inferior, funcionando como firma visual.</p>
-        <p><strong>Decision curatorial:</strong> El fondo oscuro (#1A1A1A) es el fondo por defecto para redes sociales.</p>
+        <p><strong>Decision curatorial:</strong> El fondo oscuro (#1A1A1A) es el fondo por defecto para redes sociales. En pantallas pequenas, el contraste con las lineas de color es mas efectivo sobre fondo oscuro. Ademas, el negro no compite con ningun sistema cromatico: los recibe a todos.</p>
+      </div>
+
+      <h4 style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(0,0,0,0.35);" class="mt-16 mb-8">
+        Instagram Story (1080x1920)
+      </h4>
+      <div style="width: 200px; height: 355px; background-color: #2A2A2A; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; display: flex; height: 6px;">
+          <% Logo::LogoComponent::PALETTES[:wiphala].each do |c| %>
+            <div style="flex: 1; background-color: <%= c %>;"></div>
+          <% end %>
+        </div>
+        <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :sm, dark_bg: true, show_subline: true)) %>
       </div>
     </div>
   </section>
@@ -237,12 +337,12 @@
         <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: rgba(0,0,0,0.25); letter-spacing: 0.1em;">07</span>
         <h2 style="font-family: 'DM Sans', sans-serif; font-size: 1.75rem; color: #1A1A1A; line-height: 1.3; font-weight: 700;">Nota sobre la contradiccion</h2>
       </div>
-      <div style="font-family: 'Libre Baskerville', serif; color: #444; line-height: 1.9;" class="mt-8 space-y-5">
+      <div style="color: #444; line-height: 1.9;" class="mt-8 space-y-5">
         <p>Existe una tension inherente en sistematizar lo abigarrado. Un manual de identidad es, por definicion, un instrumento de control, y "la abigarrada" nombra precisamente lo que resiste al control.</p>
         <p>Resolvemos esta contradiccion de tres maneras:</p>
-        <p><strong>1. Mutabilidad codificada.</strong> El logo no tiene "una" version correcta.</p>
-        <p><strong>2. Simplicidad estructural, complejidad cromatica.</strong></p>
-        <p><strong>3. El manual como horizonte, no como ley.</strong></p>
+        <p><strong>1. Mutabilidad codificada.</strong> El logo no tiene "una" version correcta. Tiene cinco igualmente validas. Esto no es flexibilidad decorativa: es una posicion epistemologica. Cada paleta es un enunciado completo en si mismo.</p>
+        <p><strong>2. Simplicidad estructural, complejidad cromatica.</strong> La estructura del logo es deliberadamente simple (texto + lineas) para que toda la carga expresiva recaiga en el color.</p>
+        <p><strong>3. El manual como horizonte, no como ley.</strong> Las reglas de este manual no son prohibiciones absolutas sino limites eticos.</p>
         <p style="font-style: italic; color: #888;">En otras palabras: el manual no disciplina al logo. Le da un territorio etico dentro del cual mutar libremente.</p>
       </div>
     </div>

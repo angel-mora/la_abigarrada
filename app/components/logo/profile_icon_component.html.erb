@@ -1,0 +1,10 @@
+<div class="inline-flex flex-col justify-center items-center" style="width: <%= @size %>px; height: <%= @size %>px; font-family: 'Libre Baskerville', serif; background-color: <%= @dark_bg ? '#1A1A1A' : 'transparent' %>;">
+  <span class="<%= @dark_bg ? 'text-white' : 'text-[#1A1A1A] dark:text-[#FAFAF8]' %> transition-colors duration-200" style="font-size: <%= font_size %>px; line-height: 1; font-weight: 400; letter-spacing: -0.05em;">
+    la_
+  </span>
+  <div class="flex w-full" style="height: <%= (@size * 0.08).to_i %>px; margin-top: <%= (@size * 0.05).to_i %>px;">
+    <% colors.first(4).each do |color| %>
+      <div style="flex: 1; background-color: <%= color %>; margin-right: 1px;" class="last:mr-0"></div>
+    <% end %>
+  </div>
+</div>
