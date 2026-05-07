@@ -1,5 +1,9 @@
-<h1>Newsletter#published_article</h1>
+<h1>Nueva transmisión en la abigarrada</h1>
 
 <p>
-  <%= @greeting %>, find me in app/views/newsletter_mailer/published_article.html.erb
+  Se ha publicado un nuevo artículo: <strong><%= @article.title %></strong>
+</p>
+
+<p>
+  Puedes leerlo aquí: <%= article_url(@article) %>
 </p>

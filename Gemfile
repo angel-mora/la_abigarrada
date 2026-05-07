@@ -76,3 +76,5 @@ gem "factory_bot_rails", "~> 6.5", groups: [:development, :test]
 
 gem "friendly_id", "~> 5.6"
 gem "docx", "~> 0.10.0"
+
+gem "database_cleaner", "~> 2.1", group: :test

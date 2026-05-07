@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Identities", type: :request do
-  describe "GET /show" do
+  describe "GET /internal/identidad" do
     it "returns http success" do
-      get "/identity/show"
+      get "/internal/identidad"
       expect(response).to have_http_status(:success)
     end
   end
-
 end

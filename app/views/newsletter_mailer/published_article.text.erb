@@ -1,3 +1,5 @@
-Newsletter#published_article
+Nueva transmisión en la abigarrada
 
-<%= @greeting %>, find me in app/views/newsletter_mailer/published_article.text.erb
+Se ha publicado un nuevo artículo: <%= @article.title %>
+
+Puedes leerlo aquí: <%= article_url(@article) %>
