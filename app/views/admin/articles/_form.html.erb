@@ -20,11 +20,21 @@
       <div class="grid grid-cols-2 gap-6">
         <div>
           <%= f.label :author_id, "Autor", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
-          <%= f.collection_select :author_id, Author.all, :id, :name, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none" %>
+          <div class="relative">
+            <%= f.collection_select :author_id, Author.all, :id, :name, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none cursor-pointer" %>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          </div>
         </div>
         <div>
           <%= f.label :palette, "Paleta Visual", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
-          <%= f.select :palette, Article.palettes.keys.map { |k| [k.humanize, k] }, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none" %>
+          <div class="relative">
+            <%= f.select :palette, Article.palettes.keys.map { |k| [k.humanize, k] }, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none cursor-pointer" %>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -51,7 +61,12 @@
       
       <div>
         <%= f.label :status, "Estado Editorial", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
-        <%= f.select :status, Article.statuses.keys.map { |k| [k.humanize, k] }, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none" %>
+        <div class="relative">
+          <%= f.select :status, Article.statuses.keys.map { |k| [k.humanize, k] }, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none cursor-pointer" %>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+          </div>
+        </div>
       </div>
     </div>
   </div>

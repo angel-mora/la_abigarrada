@@ -29,14 +29,15 @@
               <%= article.palette %>
             </span>
           </td>
-          <td class="p-4 flex gap-2">
-            <%= link_to "Editar", edit_admin_article_path(article), class: "text-blue-600 font-bold text-xs uppercase" %>
+          <td class="p-4 flex gap-3">
+            <%= link_to "Ver", article_path(article), target: "_blank", class: "text-black font-bold text-xs uppercase hover:underline" %>
+            <%= link_to "Editar", edit_admin_article_path(article), class: "text-blue-600 font-bold text-xs uppercase hover:underline" %>
             <% if article.draft? %>
-              <%= button_to "Publicar", publish_admin_article_path(article), method: :patch, class: "text-green-600 font-bold text-xs uppercase" %>
+              <%= button_to "Publicar", publish_admin_article_path(article), method: :patch, class: "text-green-600 font-bold text-xs uppercase hover:underline" %>
             <% else %>
-              <%= button_to "Borrador", unpublish_admin_article_path(article), method: :patch, class: "text-orange-600 font-bold text-xs uppercase" %>
+              <%= button_to "Borrador", unpublish_admin_article_path(article), method: :patch, class: "text-orange-600 font-bold text-xs uppercase hover:underline" %>
             <% end %>
-            <%= button_to "Eliminar", admin_article_path(article), method: :delete, data: { confirm: "¿Estás seguro?" }, class: "text-red-600 font-bold text-xs uppercase" %>
+            <%= button_to "Eliminar", admin_article_path(article), method: :delete, data: { confirm: "¿Estás seguro?" }, class: "text-red-600 font-bold text-xs uppercase hover:underline" %>
           </td>
         </tr>
       <% end %>
