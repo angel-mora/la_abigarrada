@@ -35,17 +35,19 @@
 
       <div class="flex flex-col md:flex-row justify-between items-end gap-12">
         <div class="flex items-center gap-6">
-          <% if @article.author.photo.attached? %>
-            <%= image_tag @article.author.photo, class: "w-20 h-20 grayscale border-4 border-black dark:border-white" %>
-          <% else %>
-            <div class="w-20 h-20 bg-black flex items-center justify-center border-4 border-black dark:border-white">
-               <%= render(Logo::ProfileIconComponent.new(palette: @article.palette, size: 64, dark_bg: true)) %>
+          <%= link_to author_path(@article.author), class: "group flex items-center gap-6" do %>
+            <% if @article.author.photo.attached? %>
+              <%= image_tag @article.author.photo, class: "w-20 h-20 grayscale border-4 border-black dark:border-white group-hover:grayscale-0 transition-all" %>
+            <% else %>
+              <div class="w-20 h-20 bg-black flex items-center justify-center border-4 border-black dark:border-white group-hover:bg-[#1A1A1A] transition-colors">
+                 <%= render(Logo::ProfileIconComponent.new(palette: @article.palette, size: 64, dark_bg: true)) %>
+              </div>
+            <% end %>
+            <div>
+              <p class="font-mono text-[0.6rem] uppercase font-bold text-black/40 dark:text-white/40 tracking-widest mb-1">Escrito por</p>
+              <p class="text-xl font-bold text-black dark:text-white underline decoration-4 decoration-[<%= accent_color %>] underline-offset-4 group-hover:text-black/80 dark:group-hover:text-white/80"><%= @article.author.name %></p>
             </div>
           <% end %>
-          <div>
-            <p class="font-mono text-[0.6rem] uppercase font-bold text-black/40 dark:text-white/40 tracking-widest mb-1">Escrito por</p>
-            <p class="text-xl font-bold text-black dark:text-white underline decoration-4 decoration-[<%= accent_color %>] underline-offset-4"><%= @article.author.name %></p>
-          </div>
         </div>
 
         <div class="flex gap-2">
@@ -72,11 +74,26 @@
       
       <div class="mt-32 pt-16 border-t-4 border-black dark:border-white">
         <div class="bg-black text-white dark:bg-white dark:text-black p-12 shadow-[12px_12px_0px_<%= accent_color %>]">
-          <h4 class="font-black text-2xl uppercase tracking-tighter mb-4" style="font-family: 'DM Sans', sans-serif;">Sobre el autor</h4>
-          <p class="text-lg leading-relaxed opacity-80"><%= @article.author.bio %></p>
-          <% if @article.author.cv.attached? %>
-            <%= link_to "Descargar CV →", rails_blob_path(@article.author.cv, disposition: "attachment"), class: "inline-block mt-8 font-mono text-xs font-bold uppercase tracking-widest border-2 border-white dark:border-black px-6 py-2 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors" %>
-          <% end %>
+          <h4 class="font-black text-2xl uppercase tracking-tighter mb-8" style="font-family: 'DM Sans', sans-serif;">Sobre el autor</h4>
+          <div class="flex flex-col sm:flex-row gap-8 items-start">
+            <% if @article.author.photo.attached? %>
+              <%= image_tag @article.author.photo, class: "w-32 h-32 object-cover grayscale border-4 border-white dark:border-black flex-shrink-0" %>
+            <% else %>
+              <div class="w-32 h-32 bg-white dark:bg-black flex items-center justify-center border-4 border-white dark:border-black flex-shrink-0">
+                 <%= render(Logo::ProfileIconComponent.new(palette: @article.palette, size: 96, dark_bg: false)) %>
+              </div>
+            <% end %>
+            <div>
+              <h5 class="text-xl font-bold font-sans uppercase mb-4"><%= link_to @article.author.name, author_path(@article.author), class: "hover:underline decoration-2 decoration-[#{accent_color}]" %></h5>
+              <p class="text-lg leading-relaxed opacity-80 mb-6 font-serif"><%= @article.author.bio %></p>
+              <div class="flex gap-4">
+                <%= link_to "Ver Perfil →", author_path(@article.author), class: "inline-block font-mono text-xs font-bold uppercase tracking-widest border-2 border-white dark:border-black px-6 py-2 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors" %>
+                <% if @article.author.cv.attached? %>
+                  <%= link_to "Descargar CV ↓", rails_blob_path(@article.author.cv, disposition: "attachment"), class: "inline-block font-mono text-xs font-bold uppercase tracking-widest border-2 border-white dark:border-black px-6 py-2 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition-colors" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
