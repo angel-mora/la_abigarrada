@@ -1,6 +1,6 @@
 module Admin
   class ArticlesController < BaseController
-    before_action :set_article, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
+    before_action :set_article, only: [:edit, :update, :destroy, :publish, :unpublish]
 
     def index
       @articles = Article.all.order(created_at: :desc)

@@ -1,6 +1,6 @@
 module Admin
   class AuthorsController < BaseController
-    before_action :set_author, only: [:show, :edit, :update, :destroy]
+    before_action :set_author, only: [:edit, :update, :destroy]
 
     def index
       @authors = Author.all
