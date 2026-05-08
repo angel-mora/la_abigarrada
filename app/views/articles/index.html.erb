@@ -1,0 +1,75 @@
+<nav class="sticky top-0 z-50 bg-[#FAFAF8] dark:bg-[#111] border-b-4 border-black dark:border-white px-4 py-3 transition-colors duration-200">
+  <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+    <%= link_to root_path, class: "hover:-translate-y-0.5 transition-transform" do %>
+      <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :sm, show_subline: true, line_style: :segments)) %>
+    <% end %>
+
+    <div class="hidden lg:flex gap-8 items-center" style="font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;">
+      <%= link_to "Observatorio", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
+      <%= link_to "Comunidad", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
+      <%= link_to "Revista", articles_path, class: "bg-black text-white dark:bg-white dark:text-black px-2 py-1" %>
+      <%= link_to "Editorial", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <button onclick="toggleDarkMode()" class="text-2xl hover:scale-110 transition-transform" aria-label="Toggle dark mode">
+        <span class="dark:hidden">🌙</span>
+        <span class="hidden dark:inline">☀️</span>
+      </button>
+      <%= link_to "Suscríbete", "#", class: "px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-[0.8rem] font-bold uppercase tracking-widest border-2 border-black dark:border-white hover:bg-[#E21C21] hover:text-black dark:hover:bg-[#E21C21] transition-colors shadow-[4px_4px_0px_rgba(0,0,0,1)]", style: "font-family: 'JetBrains Mono', monospace;" %>
+    </div>
+  </div>
+</nav>
+
+<main class="bg-black dark:bg-white p-4 min-h-screen transition-colors duration-200">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="mb-8 p-8 bg-[#FAFAF8] dark:bg-[#111] border-4 border-black dark:border-white flex flex-col md:flex-row justify-between items-end gap-6">
+      <div>
+        <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tighter text-black dark:text-white" style="font-family: 'DM Sans', sans-serif;">Archivo.</h2>
+        <p class="font-mono text-xs font-bold uppercase tracking-[0.3em] text-black/40 dark:text-white/40 mt-4">Navegación por la polifonía visual</p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <% Article.palettes.keys.each do |p| %>
+          <span class="px-3 py-1 bg-white dark:bg-black border-2 border-black dark:border-white text-[0.6rem] font-black uppercase tracking-widest text-black dark:text-white"><%= p %></span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <% @articles.each do |article| %>
+        <% hover_bg = case article.palette
+           when "feminista" then "#9B59B6"
+           when "wiphala" then "#F39A1E"
+           when "rojinegra" then "#E21C21"
+           when "lgbtiq" then "#FBED21"
+           when "cmyk" then "#00AEEF"
+           else "#3DB34A"
+           end %>
+        <article class="bg-[#FAFAF8] dark:bg-[#111] border-4 border-black dark:border-white p-8 flex flex-col group hover:bg-[<%= hover_bg %>] dark:hover:bg-[<%= hover_bg %>] transition-colors cursor-pointer relative overflow-hidden h-[400px]" onclick="window.location='<%= article_path(article) %>'">
+          <% if article.featured_image.attached? %>
+            <%= image_tag article.featured_image, class: "absolute inset-0 w-full h-full object-cover z-0 opacity-20 group-hover:opacity-10 transition-opacity" %>
+          <% end %>
+          
+          <div class="relative z-10 flex justify-between items-start mb-12">
+            <span class="bg-black text-white dark:bg-white dark:text-black px-2 py-1 font-mono text-[0.6rem] uppercase font-bold tracking-widest"><%= article.palette %></span>
+            <span class="font-mono text-[0.6rem] font-bold text-black dark:text-white group-hover:text-black"><%= article.public_date&.strftime("%d %b %Y")&.upcase %></span>
+          </div>
+
+          <div class="relative z-10 mt-auto">
+            <h3 class="text-3xl font-black text-black dark:text-white group-hover:text-black leading-[0.95] mb-4" style="font-family: 'DM Sans', sans-serif;">
+              <%= article.title %>
+            </h3>
+            <p class="text-xs text-black/60 dark:text-white/60 group-hover:text-black font-bold uppercase tracking-widest font-mono">Por <%= article.author.name %></p>
+          </div>
+        </article>
+      <% end %>
+    </div>
+    
+    <%# Simple pagination placeholder %>
+    <div class="mt-12 flex justify-center">
+      <div class="bg-[#FAFAF8] dark:bg-[#111] border-4 border-black dark:border-white p-4 font-mono text-xs font-black uppercase tracking-widest text-black dark:text-white">
+        Fin de la transmisión
+      </div>
+    </div>
+  </div>
+</main>

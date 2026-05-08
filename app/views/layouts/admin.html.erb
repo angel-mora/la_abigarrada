@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Panel Editorial — la abigarrada</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "actiontext", "data-turbo-track": "reload" %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['DM Sans', 'sans-serif'],
+              serif: ['Libre Baskerville', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+
+  <body class="bg-gray-50 font-sans text-gray-900">
+    <header class="bg-black text-white p-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1 class="font-bold uppercase tracking-widest text-sm">Panel Editorial</h1>
+        <div class="flex gap-4 items-center">
+          <%= link_to "Artículos", admin_articles_path, class: "hover:underline" %>
+          <%= link_to "Autores", admin_authors_path, class: "hover:underline" %>
+          <%= link_to "Ver Sitio", root_path, class: "bg-white text-black px-3 py-1 text-xs font-bold" %>
+          <%= button_to "Salir", session_path, method: :delete, class: "hover:underline" %>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-8">
+      <% if notice %>
+        <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-8"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-8"><%= alert %></div>
+      <% end %>
+
+      <%= yield %>
+    </main>
+  </body>
+</html>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "articles/index"
+  get "articles/show"
   root "pages#home"
   
   get "home", to: "pages#home"

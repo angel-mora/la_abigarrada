@@ -1,0 +1,45 @@
+<div class="flex justify-between items-center mb-12">
+  <h2 class="text-4xl font-black uppercase tracking-tighter">Artículos</h2>
+  <%= link_to "Nuevo Artículo", new_admin_article_path, class: "bg-black text-white px-6 py-3 font-bold uppercase text-sm tracking-widest shadow-[4px_4px_0px_#E21C21]" %>
+</div>
+
+<div class="overflow-x-auto bg-white border-4 border-black">
+  <table class="w-full text-left">
+    <thead class="bg-gray-100 border-b-4 border-black">
+      <tr>
+        <th class="p-4 font-bold uppercase text-xs tracking-widest">Título</th>
+        <th class="p-4 font-bold uppercase text-xs tracking-widest">Autor</th>
+        <th class="p-4 font-bold uppercase text-xs tracking-widest">Estado</th>
+        <th class="p-4 font-bold uppercase text-xs tracking-widest">Paleta</th>
+        <th class="p-4 font-bold uppercase text-xs tracking-widest">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr class="border-b-2 border-black/10 hover:bg-gray-50">
+          <td class="p-4 font-serif"><%= article.title %></td>
+          <td class="p-4 text-sm font-bold"><%= article.author.name %></td>
+          <td class="p-4">
+            <span class="px-2 py-1 text-[0.6rem] font-black uppercase tracking-widest <%= article.published? ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800' %>">
+              <%= article.status %>
+            </span>
+          </td>
+          <td class="p-4">
+            <span class="px-2 py-1 text-[0.6rem] font-black uppercase tracking-widest bg-gray-100">
+              <%= article.palette %>
+            </span>
+          </td>
+          <td class="p-4 flex gap-2">
+            <%= link_to "Editar", edit_admin_article_path(article), class: "text-blue-600 font-bold text-xs uppercase" %>
+            <% if article.draft? %>
+              <%= button_to "Publicar", publish_admin_article_path(article), method: :patch, class: "text-green-600 font-bold text-xs uppercase" %>
+            <% else %>
+              <%= button_to "Borrador", unpublish_admin_article_path(article), method: :patch, class: "text-orange-600 font-bold text-xs uppercase" %>
+            <% end %>
+            <%= button_to "Eliminar", admin_article_path(article), method: :delete, data: { confirm: "¿Estás seguro?" }, class: "text-red-600 font-bold text-xs uppercase" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

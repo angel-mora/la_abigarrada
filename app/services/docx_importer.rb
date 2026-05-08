@@ -7,7 +7,7 @@ class DocxImporter
     
     doc.paragraphs.each do |p|
       if p.text.present?
-        html += "<p>#{p.to_html}</p>"
+        html += "<p>#{p.text}</p>"
       end
     end
     
