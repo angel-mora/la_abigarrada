@@ -1,7 +1,7 @@
-<div class="flex justify-between items-center mb-12">
-  <h2 class="text-4xl font-black uppercase tracking-tighter text-black dark:text-white">Artículos</h2>
-  <%= link_to "Nuevo Artículo", new_admin_article_path, class: "bg-black dark:bg-white text-white dark:text-black px-6 py-3 font-bold uppercase text-sm tracking-widest shadow-[4px_4px_0px_#E21C21] dark:shadow-[4px_4px_0px_#FFF] hover:translate-y-1 hover:shadow-none transition-all" %>
-</div>
+<%= render(Admin::PageHeaderComponent.new(
+      title: "Artículos", 
+      right_action: link_to("Nuevo Artículo", new_admin_article_path, class: "bg-black dark:bg-white text-white dark:text-black px-6 py-3 font-bold uppercase text-sm tracking-widest shadow-[4px_4px_0px_#E21C21] dark:shadow-[4px_4px_0px_#FFF] hover:translate-y-1 hover:shadow-none transition-all")
+)) %>
 
 <div class="overflow-x-auto bg-white dark:bg-[#111] border-4 border-black dark:border-white">
   <table class="w-full text-left text-black dark:text-white">

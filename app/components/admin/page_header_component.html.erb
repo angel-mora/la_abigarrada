@@ -1,0 +1,11 @@
+<div class="mb-12 flex justify-between items-start">
+  <div>
+    <h2 class="text-4xl font-black uppercase tracking-tighter text-black dark:text-white"><%= @title %></h2>
+    <% if @subtitle.present? %>
+      <p class="font-mono text-xs text-black/40 dark:text-white/40 uppercase tracking-widest mt-2"><%= @subtitle %></p>
+    <% end %>
+  </div>
+  <% if @right_action.present? %>
+    <%= @right_action %>
+  <% end %>
+</div>

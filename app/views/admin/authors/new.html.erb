@@ -1,4 +1,2 @@
-<div class="mb-12">
-  <h2 class="text-4xl font-black uppercase tracking-tighter">Nuevo Autor</h2>
-</div>
+<%= render(Admin::PageHeaderComponent.new(title: "Nuevo Autor")) %>
 <%= render "form", author: @author %>
