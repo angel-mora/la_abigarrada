@@ -1,6 +1,6 @@
 <%= form_with(model: [:admin, article], class: "space-y-10") do |f| %>
   <% if article.errors.any? %>
-    <div class="bg-red-50 p-6 border-4 border-red-500 text-red-700">
+    <div class="bg-red-50 dark:bg-red-900/30 p-6 border-4 border-red-500 text-red-700 dark:text-red-400">
       <h2 class="font-black uppercase text-sm tracking-widest mb-2"><%= pluralize(article.errors.count, "error") %> impiden guardar este artículo:</h2>
       <ul class="list-disc pl-5 font-mono text-xs">
         <% article.errors.full_messages.each do |message| %>
@@ -10,19 +10,19 @@
     </div>
   <% end %>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 border-4 border-black">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white dark:bg-[#111] text-black dark:text-white p-8 border-4 border-black dark:border-white">
     <div class="space-y-6">
       <div>
         <%= f.label :title, "Título", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
-        <%= f.text_field :title, class: "w-full border-2 border-black p-4 font-serif text-xl focus:ring-4 focus:ring-[#E21C21] outline-none" %>
+        <%= f.text_field :title, class: "w-full border-2 border-black dark:border-white p-4 font-serif text-xl focus:ring-4 focus:ring-[#E21C21] outline-none bg-transparent" %>
       </div>
 
       <div class="grid grid-cols-2 gap-6">
         <div>
           <%= f.label :author_id, "Autor", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
           <div class="relative">
-            <%= f.collection_select :author_id, Author.all, :id, :name, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none cursor-pointer" %>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black">
+            <%= f.collection_select :author_id, Author.all, :id, :name, {}, class: "w-full border-2 border-black dark:border-white p-3 font-mono text-xs appearance-none bg-white dark:bg-[#111] rounded-none cursor-pointer" %>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black dark:text-white">
               <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
             </div>
           </div>
@@ -30,8 +30,8 @@
         <div>
           <%= f.label :palette, "Paleta Visual", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
           <div class="relative">
-            <%= f.select :palette, Article.palettes.keys.map { |k| [k.humanize, k] }, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none cursor-pointer" %>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black">
+            <%= f.select :palette, Article.palettes.keys.map { |k| [k.humanize, k] }, {}, class: "w-full border-2 border-black dark:border-white p-3 font-mono text-xs appearance-none bg-white dark:bg-[#111] rounded-none cursor-pointer" %>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black dark:text-white">
               <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
             </div>
           </div>
@@ -40,20 +40,20 @@
 
       <div>
         <%= f.label :public_date, "Fecha de Publicación", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
-        <%= f.date_field :public_date, class: "w-full border-2 border-black p-3 font-mono text-xs" %>
+        <%= f.date_field :public_date, class: "w-full border-2 border-black dark:border-white p-3 font-mono text-xs bg-transparent" %>
       </div>
 
       <div>
         <%= f.label :featured_image, "Imagen Destacada", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
-        <%= f.file_field :featured_image, class: "w-full border-2 border-black p-3 font-mono text-xs bg-gray-50" %>
+        <%= f.file_field :featured_image, class: "w-full border-2 border-black dark:border-white p-3 font-mono text-xs bg-gray-50 dark:bg-[#222]" %>
       </div>
     </div>
 
-    <div class="space-y-6 border-l-2 border-black/10 pl-12">
-      <div class="bg-[#FBED21] p-6 border-4 border-black shadow-[8px_8px_0px_#000]">
+    <div class="space-y-6 border-l-2 border-black/10 dark:border-white/20 pl-12">
+      <div class="bg-[#FBED21] text-black p-6 border-4 border-black dark:border-white shadow-[8px_8px_0px_#000] dark:shadow-[8px_8px_0px_#FFF]">
         <h4 class="font-black uppercase text-xs tracking-[0.2em] mb-4">Importación Técnica</h4>
         <%= f.label :docx_file, "Subir Documento (.docx)", class: "block font-bold text-xs mb-2" %>
-        <%= f.file_field :docx_file, class: "w-full bg-white border-2 border-black p-2 font-mono text-[0.6rem]" %>
+        <%= f.file_field :docx_file, class: "w-full bg-white dark:bg-[#111] dark:text-white border-2 border-black dark:border-white p-2 font-mono text-[0.6rem]" %>
         <p class="mt-4 text-[0.6rem] font-mono text-black/60 italic leading-tight">
           Al subir un archivo, el contenido se convertirá automáticamente a HTML y reemplazará el texto actual en el editor.
         </p>
@@ -62,8 +62,8 @@
       <div>
         <%= f.label :status, "Estado Editorial", class: "block font-black uppercase text-xs tracking-[0.2em] mb-2" %>
         <div class="relative">
-          <%= f.select :status, Article.statuses.keys.map { |k| [k.humanize, k] }, {}, class: "w-full border-2 border-black p-3 font-mono text-xs appearance-none bg-white rounded-none cursor-pointer" %>
-          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black">
+          <%= f.select :status, Article.statuses.keys.map { |k| [k.humanize, k] }, {}, class: "w-full border-2 border-black dark:border-white p-3 font-mono text-xs appearance-none bg-white dark:bg-[#111] rounded-none cursor-pointer" %>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black dark:text-white">
             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
           </div>
         </div>
@@ -71,15 +71,15 @@
     </div>
   </div>
 
-  <div class="bg-white border-4 border-black p-8">
-    <%= f.label :content, "Contenido del Artículo", class: "block font-black uppercase text-xs tracking-[0.2em] mb-4" %>
-    <div class="prose prose-xl max-w-none">
-      <%= f.rich_text_area :content, class: "min-h-[500px] border-2 border-black p-6 font-serif" %>
+  <div class="bg-white dark:bg-[#111] border-4 border-black dark:border-white p-8">
+    <%= f.label :content, "Contenido del Artículo", class: "block font-black uppercase text-xs tracking-[0.2em] mb-4 text-black dark:text-white" %>
+    <div class="prose prose-xl prose-black dark:prose-invert max-w-none">
+      <%= f.rich_text_area :content, class: "min-h-[500px] border-2 border-black dark:border-white p-6 font-serif bg-white dark:bg-[#111] text-black dark:text-white" %>
     </div>
   </div>
 
   <div class="flex justify-end gap-6 pb-20">
-    <%= link_to "Cancelar", admin_articles_path, class: "px-8 py-4 font-bold uppercase text-xs tracking-widest border-2 border-black hover:bg-black hover:text-white transition-colors" %>
-    <%= f.submit "Guardar Artículo", class: "px-12 py-4 bg-black text-white font-black uppercase text-xs tracking-[0.2em] shadow-[8px_8px_0px_#E21C21] hover:translate-y-1 hover:shadow-none transition-all cursor-pointer" %>
+    <%= link_to "Cancelar", admin_articles_path, class: "px-8 py-4 font-bold uppercase text-xs tracking-widest border-2 border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors" %>
+    <%= f.submit "Guardar Artículo", class: "px-12 py-4 bg-black dark:bg-white text-white dark:text-black font-black uppercase text-xs tracking-[0.2em] shadow-[8px_8px_0px_#E21C21] dark:shadow-[8px_8px_0px_#FFF] hover:translate-y-1 hover:shadow-none transition-all cursor-pointer" %>
   </div>
 <% end %>

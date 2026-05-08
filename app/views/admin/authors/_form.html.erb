@@ -1,8 +1,8 @@
-<%= form_with(model: [:admin, author], class: "space-y-8 max-w-2xl bg-white border-4 border-black p-8") do |f| %>
+<%= form_with(model: [:admin, author], class: "space-y-8 max-w-2xl bg-white dark:bg-[#111] text-black dark:text-white border-4 border-black dark:border-white p-8") do |f| %>
   <% if author.errors.any? %>
-    <div class="bg-red-50 p-4 border-l-4 border-red-500">
-      <h2 class="font-bold text-red-700 text-sm mb-2"><%= pluralize(author.errors.count, "error") %></h2>
-      <ul class="text-xs text-red-600 list-disc pl-5 font-mono">
+    <div class="bg-red-50 dark:bg-red-900/30 p-4 border-l-4 border-red-500">
+      <h2 class="font-bold text-red-700 dark:text-red-400 text-sm mb-2"><%= pluralize(author.errors.count, "error") %></h2>
+      <ul class="text-xs text-red-600 dark:text-red-300 list-disc pl-5 font-mono">
         <% author.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
@@ -12,28 +12,28 @@
 
   <div>
     <%= f.label :name, "Nombre", class: "block font-black uppercase text-xs tracking-widest mb-2" %>
-    <%= f.text_field :name, class: "w-full border-2 border-black p-3 font-serif text-lg" %>
+    <%= f.text_field :name, class: "w-full border-2 border-black dark:border-white p-3 font-serif text-lg bg-transparent" %>
   </div>
 
   <div>
     <%= f.label :bio, "Biografía", class: "block font-black uppercase text-xs tracking-widest mb-2" %>
-    <%= f.text_area :bio, rows: 4, class: "w-full border-2 border-black p-3 font-serif" %>
+    <%= f.text_area :bio, rows: 4, class: "w-full border-2 border-black dark:border-white p-3 font-serif bg-transparent" %>
   </div>
 
   <div class="grid grid-cols-2 gap-8">
-    <div class="p-4 bg-gray-50 border-2 border-dashed border-black/20">
+    <div class="p-4 bg-gray-50 dark:bg-[#222] border-2 border-dashed border-black/20 dark:border-white/20">
       <%= f.label :photo, "Foto de Perfil", class: "block font-bold text-xs mb-2" %>
       <%= f.file_field :photo, class: "text-xs font-mono w-full" %>
     </div>
     
-    <div class="p-4 bg-gray-50 border-2 border-dashed border-black/20">
+    <div class="p-4 bg-gray-50 dark:bg-[#222] border-2 border-dashed border-black/20 dark:border-white/20">
       <%= f.label :cv, "CV (PDF/Docx)", class: "block font-bold text-xs mb-2" %>
       <%= f.file_field :cv, class: "text-xs font-mono w-full" %>
     </div>
   </div>
 
   <div class="flex gap-4 pt-8">
-    <%= f.submit "Guardar Autor", class: "bg-black text-white px-8 py-3 font-bold uppercase text-xs tracking-widest shadow-[4px_4px_0px_#00AEEF] hover:translate-y-1 hover:shadow-none transition-all cursor-pointer" %>
-    <%= link_to "Cancelar", admin_authors_path, class: "px-8 py-3 border-2 border-black font-bold uppercase text-xs tracking-widest hover:bg-black hover:text-white transition-colors" %>
+    <%= f.submit "Guardar Autor", class: "bg-black dark:bg-white text-white dark:text-black px-8 py-3 font-bold uppercase text-xs tracking-widest shadow-[4px_4px_0px_#00AEEF] dark:shadow-[4px_4px_0px_#FFF] hover:translate-y-1 hover:shadow-none transition-all cursor-pointer" %>
+    <%= link_to "Cancelar", admin_authors_path, class: "px-8 py-3 border-2 border-black dark:border-white font-bold uppercase text-xs tracking-widest text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors" %>
   </div>
 <% end %>
