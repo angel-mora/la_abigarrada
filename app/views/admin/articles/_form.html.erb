@@ -73,8 +73,8 @@
 
   <div class="bg-white dark:bg-[#111] border-4 border-black dark:border-white p-8">
     <%= f.label :content, "Contenido del Artículo", class: "block font-black uppercase text-xs tracking-[0.2em] mb-4 text-black dark:text-white" %>
-    <div class="prose prose-xl prose-black dark:prose-invert max-w-none">
-      <%= f.rich_text_area :content, class: "min-h-[500px] border-2 border-black dark:border-white p-6 font-serif bg-white dark:bg-[#111] text-black dark:text-white" %>
+    <div class="trix-wrapper dark:text-white">
+      <%= f.rich_text_area :content, class: "min-h-[500px] border-2 border-black dark:border-white p-6 font-serif bg-white dark:bg-[#111] text-black dark:text-white outline-none focus:ring-4 focus:ring-[#E21C21]" %>
     </div>
   </div>
 

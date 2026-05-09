@@ -68,10 +68,10 @@
       <div id="newsletter" class="md:col-span-4 bg-[#E21C21] border-4 border-black dark:border-white p-8 flex flex-col justify-center text-black">
         <h3 class="text-3xl font-black mb-4 uppercase leading-none" style="font-family: 'DM Sans', sans-serif;">La señal en <br/>la tormenta.</h3>
         <p class="font-mono text-sm mb-6 font-bold">Recibe nuestras alertas antifascistas y nuevos textos directo en tu correo.</p>
-        <input type="email" placeholder="TU CORREO AQUÍ" class="w-full bg-[#FAFAF8] border-2 border-black p-3 mb-4 font-mono text-sm focus:outline-none focus:ring-4 focus:ring-black">
-        <button class="w-full bg-black text-white font-bold font-mono py-3 uppercase tracking-widest hover:bg-[#FAFAF8] hover:text-black transition-colors border-2 border-black">
-          Suscribir
-        </button>
+        <%= form_with url: subscribers_path, class: "w-full" do |f| %>
+          <%= f.email_field :email, placeholder: "TU CORREO AQUÍ", required: true, class: "w-full bg-[#FAFAF8] border-2 border-black p-3 mb-4 font-mono text-sm focus:outline-none focus:ring-4 focus:ring-black" %>
+          <%= f.submit "Suscribir", class: "w-full bg-black text-white font-bold font-mono py-3 uppercase tracking-widest hover:bg-[#FAFAF8] hover:text-black transition-colors border-2 border-black cursor-pointer" %>
+        <% end %>
       </div>
 
       <% if @latest_articles[1] %>

@@ -438,3 +438,4 @@ trix-editor .attachment__metadata {
   padding: 0 !important;
   max-width: 100% !important;
 }
+\n.dark trix-editor {\n  border-color: #444 !important;\n  background-color: #111 !important;\n  color: #fff !important;\n}\n.dark trix-toolbar .trix-button-group {\n  background-color: #222 !important;\n  border-color: #444 !important;\n}\n.dark trix-toolbar .trix-button {\n  border-bottom-color: #444 !important;\n  border-left-color: #444 !important;\n}\n.dark trix-toolbar .trix-button--icon::before {\n  filter: invert(1) opacity(0.8) !important;\n}\n.dark trix-toolbar .trix-button.trix-active {\n  background-color: #444 !important;\n}
