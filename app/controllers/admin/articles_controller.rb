@@ -11,11 +11,12 @@ module Admin
     end
 
     def create
-      @article = Article.new(article_params)
-      
+      safe_params = article_params
       if params[:article][:docx_file].present?
-        @article.content = DocxImporter.import(params[:article][:docx_file].path)
+        safe_params[:content] = DocxImporter.import(params[:article][:docx_file].path)
       end
+
+      @article = Article.new(safe_params)
 
       if @article.save
         redirect_to admin_articles_path, notice: "Artículo creado exitosamente."
@@ -28,11 +29,12 @@ module Admin
     end
 
     def update
+      safe_params = article_params
       if params[:article][:docx_file].present?
-        @article.content = DocxImporter.import(params[:article][:docx_file].path)
+        safe_params[:content] = DocxImporter.import(params[:article][:docx_file].path)
       end
 
-      if @article.update(article_params)
+      if @article.update(safe_params)
         redirect_to admin_articles_path, notice: "Artículo actualizado."
       else
         render :edit, status: :unprocessable_entity

@@ -5,5 +5,5 @@ Feature: Landing Page
 
   Scenario: Viewing the manifesto
     Given I am on the home page
-    Then I should see "Identidades Múltiples."
+    Then I should see "Identidades múltiples."
     And I should see "No buscamos la armonía cómoda"
