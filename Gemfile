@@ -80,3 +80,5 @@ gem "docx", "~> 0.10.0"
 gem "database_cleaner", "~> 2.1", group: :test
 
 gem "kaminari", "~> 1.2"
+
+gem "importmap-rails", "~> 2.2"

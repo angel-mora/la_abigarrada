@@ -3,18 +3,7 @@
   accent_color = palette_colors.first
 %>
 
-<nav class="sticky top-0 z-50 bg-[#FAFAF8]/90 dark:bg-[#111]/90 backdrop-blur-md border-b-2 border-black dark:border-white px-4 py-3 transition-colors duration-200">
-  <div class="max-w-[1200px] mx-auto flex justify-between items-center">
-    <%= link_to root_path do %>
-      <%= render(Logo::LogoComponent.new(palette: @article.palette, size: :sm, show_subline: true, line_style: :segments)) %>
-    <% end %>
-    
-    <div class="flex items-center gap-6">
-       <button onclick="toggleDarkMode()" class="text-xl">🌙</button>
-       <%= link_to "Archivo", articles_path, class: "font-mono text-xs font-bold uppercase tracking-widest border-2 border-black dark:border-white px-4 py-1 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors" %>
-    </div>
-  </div>
-</nav>
+<%= render 'shared/navbar' %>
 
 <article class="bg-[#FAFAF8] dark:bg-[#111] transition-colors duration-200">
   <%# Header: Inspired by la_abigarrada_article.jpeg %>
@@ -100,11 +89,4 @@
   </main>
 </article>
 
-<footer class="bg-black text-white py-20 px-4">
-  <div class="max-w-[800px] mx-auto text-center">
-    <div class="mb-12">
-      <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :md, show_subline: true, line_style: :segments, dark_bg: true)) %>
-    </div>
-    <p class="font-mono text-xs font-bold uppercase tracking-[0.4em] opacity-40">Fin de la Transmisión</p>
-  </div>
-</footer>
+<%= render 'shared/footer' %>

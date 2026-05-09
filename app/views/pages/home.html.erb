@@ -1,26 +1,4 @@
-<nav class="sticky top-0 z-50 bg-[#FAFAF8] dark:bg-[#111] border-b-4 border-black dark:border-white px-4 py-3 transition-colors duration-200">
-  <div class="max-w-[1400px] mx-auto flex justify-between items-center">
-    <%= link_to root_path, class: "hover:-translate-y-0.5 transition-transform" do %>
-      <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :sm, show_subline: true, line_style: :segments)) %>
-    <% end %>
-
-    <div class="hidden lg:flex gap-8 items-center" style="font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;">
-      <%= link_to "Observatorio", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
-      <%= link_to "Comunidad", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
-      <%= link_to "Revista", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
-      <%= link_to "Editorial", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
-      <%= link_to "Colaboraciones", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
-    </div>
-
-    <div class="flex items-center gap-4">
-      <button onclick="toggleDarkMode()" class="text-2xl hover:scale-110 transition-transform" aria-label="Toggle dark mode">
-        <span class="dark:hidden">🌙</span>
-        <span class="hidden dark:inline">☀️</span>
-      </button>
-      <%= link_to "Suscríbete", "#", class: "px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-[0.8rem] font-bold uppercase tracking-widest border-2 border-black dark:border-white hover:bg-[#E21C21] hover:text-black dark:hover:bg-[#E21C21] transition-colors shadow-[4px_4px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_rgba(255,255,255,1)]", style: "font-family: 'JetBrains Mono', monospace;" %>
-    </div>
-  </div>
-</nav>
+<%= render 'shared/navbar' %>
 
 <main class="dark:bg-[#111]">
   <%# BRUTALIST HERO (Manifesto Focus) %>
@@ -32,7 +10,7 @@
         </div>
         <h1 class="text-6xl md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] text-black dark:text-white tracking-tighter uppercase" style="font-family: 'DM Sans', sans-serif;">
           Identidades <br/>
-          <span class="text-transparent" style="-webkit-text-stroke: 2px currentColor;">Múltiples.</span>
+          <span class="text-transparent" style="-webkit-text-stroke: 2px currentColor;">múltiples.</span>
         </h1>
         <div class="mt-12 max-w-2xl border-l-8 border-[#E21C21] pl-6">
           <p class="text-2xl md:text-3xl text-black dark:text-gray-300 leading-snug" style="font-family: 'Libre Baskerville', serif;">
@@ -45,7 +23,7 @@
         <p class="text-lg text-black/70 dark:text-gray-400 font-mono uppercase tracking-widest leading-relaxed border-t-2 border-black dark:border-white pt-6">
           La modernidad occidental no nos puede ordenar.
         </p>
-        <%= link_to "#", class: "group block px-8 py-6 bg-[#FBED21] text-black border-4 border-black font-bold text-xl uppercase tracking-widest hover:bg-black hover:text-white transition-all shadow-[8px_8px_0px_rgba(0,0,0,1)]", style: "font-family: 'DM Sans', sans-serif;" do %>
+        <%= link_to articles_path, class: "group block px-8 py-6 bg-[#FBED21] text-black border-4 border-black font-bold text-xl uppercase tracking-widest hover:bg-black hover:text-white transition-all shadow-[8px_8px_0px_rgba(0,0,0,1)]", style: "font-family: 'DM Sans', sans-serif;" do %>
           Leer la Revista
           <span class="block mt-2 font-mono text-xs opacity-60 group-hover:opacity-100">Transmisión Abierta →</span>
         <% end %>
@@ -87,8 +65,8 @@
       <% end %>
 
       <%# Newsletter CTA (Small block) %>
-      <div class="md:col-span-4 bg-[#E21C21] border-4 border-black dark:border-white p-8 flex flex-col justify-center text-black">
-        <h3 class="text-3xl font-black mb-4 uppercase leading-none" style="font-family: 'DM Sans', sans-serif;">La Señal en <br/>la Tormenta.</h3>
+      <div id="newsletter" class="md:col-span-4 bg-[#E21C21] border-4 border-black dark:border-white p-8 flex flex-col justify-center text-black">
+        <h3 class="text-3xl font-black mb-4 uppercase leading-none" style="font-family: 'DM Sans', sans-serif;">La señal en <br/>la tormenta.</h3>
         <p class="font-mono text-sm mb-6 font-bold">Recibe nuestras alertas antifascistas y nuevos textos directo en tu correo.</p>
         <input type="email" placeholder="TU CORREO AQUÍ" class="w-full bg-[#FAFAF8] border-2 border-black p-3 mb-4 font-mono text-sm focus:outline-none focus:ring-4 focus:ring-black">
         <button class="w-full bg-black text-white font-bold font-mono py-3 uppercase tracking-widest hover:bg-[#FAFAF8] hover:text-black transition-colors border-2 border-black">
@@ -149,31 +127,4 @@
   </section>
 </main>
 
-<footer class="bg-[#FAFAF8] dark:bg-[#111] text-black dark:text-white py-20 px-4 border-t-4 border-black dark:border-white transition-colors duration-200">
-  <div class="max-w-[1400px] mx-auto grid md:grid-cols-4 gap-12 border-b-4 border-black dark:border-white pb-16">
-    <div class="md:col-span-2">
-      <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :md, show_subline: true, line_style: :segments)) %>
-      <p class="mt-8 text-xl font-black uppercase tracking-tight max-w-sm leading-none" style="font-family: 'DM Sans', sans-serif;">
-        Laboratorio de pensamiento crítico latinoamericano.
-      </p>
-    </div>
-    
-    <div class="flex flex-col gap-4 font-mono text-sm font-bold uppercase tracking-widest">
-      <span class="text-[#E21C21]">Navegación</span>
-      <%= link_to "Inicio", root_path, class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-      <%= link_to "Revista", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-      <%= link_to "Manual Identidad", identity_manual_path, class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-    </div>
-
-    <div class="flex flex-col gap-4 font-mono text-sm font-bold uppercase tracking-widest">
-      <span class="text-[#E21C21]">Redes</span>
-      <%= link_to "Instagram", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-      <%= link_to "X / Twitter", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-      <%= link_to "Contacto", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-    </div>
-  </div>
-  <div class="max-w-[1400px] mx-auto mt-6 flex justify-between items-center text-[0.6rem] font-bold uppercase tracking-[0.3em] font-mono">
-    <span>la abigarrada © 2026</span>
-    <span>Transmisión Abierta</span>
-  </div>
-</footer>
+<%= render 'shared/footer' %>

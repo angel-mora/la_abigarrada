@@ -12,20 +12,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "actiontext", "data-turbo-track": "reload" %>
-    
-    <script type="importmap">
-      {
-        "imports": {
-          "trix": "https://unpkg.com/trix@2.1.1/dist/trix.umd.min.js",
-          "@rails/actiontext": "https://unpkg.com/@rails/actiontext@8.0.5/app/javascript/actiontext/index.js"
-        }
-      }
-    </script>
-    <script type="module">
-      import "trix"
-      import "@rails/actiontext"
-    </script>
-
+    <%= javascript_importmap_tags %>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -96,33 +83,6 @@
       <%= yield %>
     </main>
 
-    <footer class="bg-[#FAFAF8] dark:bg-[#111] text-black dark:text-white py-20 px-4 border-t-4 border-black dark:border-white mt-auto transition-colors duration-200">
-      <div class="max-w-[1400px] mx-auto grid md:grid-cols-4 gap-12 border-b-4 border-black dark:border-white pb-16">
-        <div class="md:col-span-2">
-          <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :md, show_subline: true, line_style: :segments)) %>
-          <p class="mt-8 text-xl font-black uppercase tracking-tight max-w-sm leading-none" style="font-family: 'DM Sans', sans-serif;">
-            Laboratorio de pensamiento crítico latinoamericano.
-          </p>
-        </div>
-        
-        <div class="flex flex-col gap-4 font-mono text-sm font-bold uppercase tracking-widest">
-          <span class="text-[#E21C21]">Navegación</span>
-          <%= link_to "Inicio", root_path, class: "text-black dark:text-white hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-          <%= link_to "Revista", articles_path, class: "text-black dark:text-white hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-          <%= link_to "Manual Identidad", identity_manual_path, class: "text-black dark:text-white hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-        </div>
-
-        <div class="flex flex-col gap-4 font-mono text-sm font-bold uppercase tracking-widest">
-          <span class="text-[#E21C21]">Redes</span>
-          <%= link_to "Instagram", "#", class: "text-black dark:text-white hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-          <%= link_to "X / Twitter", "#", class: "text-black dark:text-white hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-          <%= link_to "Contacto", "#", class: "text-black dark:text-white hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-        </div>
-      </div>
-      <div class="max-w-[1400px] mx-auto mt-6 flex justify-between items-center text-[0.6rem] font-bold uppercase tracking-[0.3em] font-mono">
-        <span>la abigarrada © 2026</span>
-        <span>Transmisión Abierta</span>
-      </div>
-    </footer>
+    <%= render 'shared/footer' %>
   </body>
 </html>

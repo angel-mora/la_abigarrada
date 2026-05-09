@@ -1,25 +1,4 @@
-<nav class="sticky top-0 z-50 bg-[#FAFAF8] dark:bg-[#111] border-b-4 border-black dark:border-white px-4 py-3 transition-colors duration-200">
-  <div class="max-w-[1400px] mx-auto flex justify-between items-center">
-    <%= link_to root_path, class: "hover:-translate-y-0.5 transition-transform" do %>
-      <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :sm, show_subline: true, line_style: :segments)) %>
-    <% end %>
-
-    <div class="hidden lg:flex gap-8 items-center" style="font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em;">
-      <%= link_to "Observatorio", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
-      <%= link_to "Comunidad", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
-      <%= link_to "Revista", articles_path, class: "bg-black text-white dark:bg-white dark:text-black px-2 py-1" %>
-      <%= link_to "Editorial", "#", class: "text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black px-2 py-1 transition-colors" %>
-    </div>
-
-    <div class="flex items-center gap-4">
-      <button onclick="toggleDarkMode()" class="text-2xl hover:scale-110 transition-transform" aria-label="Toggle dark mode">
-        <span class="dark:hidden">🌙</span>
-        <span class="hidden dark:inline">☀️</span>
-      </button>
-      <%= link_to "Suscríbete", "#", class: "px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-[0.8rem] font-bold uppercase tracking-widest border-2 border-black dark:border-white hover:bg-[#E21C21] hover:text-black dark:hover:bg-[#E21C21] transition-colors shadow-[4px_4px_0px_rgba(0,0,0,1)]", style: "font-family: 'JetBrains Mono', monospace;" %>
-    </div>
-  </div>
-</nav>
+<%= render 'shared/navbar' %>
 
 <main class="bg-black dark:bg-white p-4 min-h-screen transition-colors duration-200">
   <div class="max-w-[1400px] mx-auto">
@@ -80,31 +59,4 @@
   </div>
 </main>
 
-<footer class="bg-[#FAFAF8] dark:bg-[#111] text-black dark:text-white py-20 px-4 border-t-4 border-black dark:border-white transition-colors duration-200">
-  <div class="max-w-[1400px] mx-auto grid md:grid-cols-4 gap-12 border-b-4 border-black dark:border-white pb-16">
-    <div class="md:col-span-2">
-      <%= render(Logo::LogoComponent.new(palette: :wiphala, size: :md, show_subline: true, line_style: :segments)) %>
-      <p class="mt-8 text-xl font-black uppercase tracking-tight max-w-sm leading-none" style="font-family: 'DM Sans', sans-serif;">
-        Laboratorio de pensamiento crítico latinoamericano.
-      </p>
-    </div>
-    
-    <div class="flex flex-col gap-4 font-mono text-sm font-bold uppercase tracking-widest">
-      <span class="text-[#E21C21]">Navegación</span>
-      <%= link_to "Inicio", root_path, class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-      <%= link_to "Revista", articles_path, class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-      <%= link_to "Manual Identidad", identity_manual_path, class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-    </div>
-
-    <div class="flex flex-col gap-4 font-mono text-sm font-bold uppercase tracking-widest">
-      <span class="text-[#E21C21]">Redes</span>
-      <%= link_to "Instagram", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-      <%= link_to "X / Twitter", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-      <%= link_to "Contacto", "#", class: "hover:underline hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black w-max" %>
-    </div>
-  </div>
-  <div class="max-w-[1400px] mx-auto mt-6 flex justify-between items-center text-[0.6rem] font-bold uppercase tracking-[0.3em] font-mono">
-    <span>la abigarrada © 2026</span>
-    <span>Transmisión Abierta</span>
-  </div>
-</footer>
+<%= render 'shared/footer' %>
