@@ -13,12 +13,12 @@
     </div>
 
     <div class="flex items-center gap-4">
-      <button onclick="toggleDarkMode()" class="relative flex items-center w-14 h-8 rounded-full border-2 border-black dark:border-white bg-[#FAFAF8] dark:bg-[#111] overflow-hidden transition-colors duration-300" aria-label="Toggle dark mode">
-        <div class="absolute w-full flex justify-between px-[6px] text-xs pointer-events-none z-0">
-          <span class="opacity-100 dark:opacity-40 transition-opacity">☀️</span>
-          <span class="opacity-40 dark:opacity-100 transition-opacity">🌙</span>
+      <button onclick="toggleDarkMode()" class="relative flex items-center w-14 h-8 rounded-full border-2 border-black dark:border-white bg-gray-200 dark:bg-gray-800 transition-colors duration-300 focus:outline-none" aria-label="Toggle dark mode">
+        <div class="absolute inset-0 flex justify-between items-center px-1 text-xs pointer-events-none z-10">
+          <span>☀️</span>
+          <span>🌙</span>
         </div>
-        <div class="w-6 h-6 bg-transparent border-2 border-black dark:border-white rounded-full transition-transform duration-300 transform translate-x-[2px] dark:translate-x-[26px] relative z-10"></div>
+        <div class="w-6 h-6 bg-white dark:bg-black border-2 border-black dark:border-white rounded-full transition-transform duration-300 transform translate-x-[2px] dark:translate-x-[26px] relative z-0"></div>
       </button>
       <%= link_to "Suscríbete", root_path(anchor: "newsletter"), class: "px-6 py-2 bg-black dark:bg-white text-white dark:text-black text-[0.8rem] font-bold uppercase tracking-widest border-2 border-black dark:border-white hover:bg-[#E21C21] hover:text-black dark:hover:bg-[#E21C21] transition-colors shadow-[4px_4px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_rgba(255,255,255,1)]", style: "font-family: 'JetBrains Mono', monospace;" %>
     </div>
