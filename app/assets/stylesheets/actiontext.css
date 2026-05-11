@@ -439,15 +439,15 @@ trix-editor .attachment__metadata {
   max-width: 100% !important;
 }
 
-/* Tailwind Preflight Overrides for Trix Content */
-.trix-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1em; }
-.trix-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1em; }
-.trix-content li { display: list-item; margin-left: 0; }
-.trix-content h1 { font-size: 1.5em; font-weight: bold; margin-bottom: 0.5em; margin-top: 1em; line-height: 1.2; }
-.trix-content strong, .trix-content b { font-weight: bold; }
-.trix-content em, .trix-content i { font-style: italic; }
-.trix-content blockquote { border-left: 4px solid #ccc; padding-left: 1em; margin-left: 0; margin-bottom: 1em; font-style: italic; }
-.trix-content a { text-decoration: underline; color: #E21C21; }
+/* Tailwind Preflight Overrides for Trix Content and Editor */
+.trix-content ul, trix-editor ul { list-style-type: disc !important; padding-left: 1.5rem !important; margin-bottom: 1em !important; }
+.trix-content ol, trix-editor ol { list-style-type: decimal !important; padding-left: 1.5rem !important; margin-bottom: 1em !important; }
+.trix-content li, trix-editor li { display: list-item !important; margin-left: 0 !important; }
+.trix-content h1, trix-editor h1 { font-size: 1.5em !important; font-weight: bold !important; margin-bottom: 0.5em !important; margin-top: 1em !important; line-height: 1.2 !important; }
+.trix-content strong, .trix-content b, trix-editor strong, trix-editor b { font-weight: bold !important; }
+.trix-content em, .trix-content i, trix-editor em, trix-editor i { font-style: italic !important; }
+.trix-content blockquote, trix-editor blockquote { border-left: 4px solid #ccc !important; padding-left: 1em !important; margin-left: 0 !important; margin-bottom: 1em !important; font-style: italic !important; }
+.trix-content a, trix-editor a { text-decoration: underline !important; color: #E21C21 !important; }
 
 /* Dark Mode Support for Trix */
 .dark trix-editor {
@@ -469,6 +469,6 @@ trix-editor .attachment__metadata {
 .dark trix-toolbar .trix-button.trix-active {
   background-color: #444 !important;
 }
-.dark .trix-content blockquote {
-  border-left-color: #555;
+.dark .trix-content blockquote, .dark trix-editor blockquote {
+  border-left-color: #555 !important;
 }
