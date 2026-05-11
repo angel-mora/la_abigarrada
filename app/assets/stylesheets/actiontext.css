@@ -440,6 +440,7 @@ trix-editor .attachment__metadata {
 }
 
 /* Tailwind Preflight Overrides for Trix Content and Editor */
+.trix-content p, trix-editor p, .prose p { text-align: justify !important; hyphens: auto !important; }
 .trix-content ul, trix-editor ul { list-style-type: disc !important; padding-left: 1.5rem !important; margin-bottom: 1em !important; }
 .trix-content ol, trix-editor ol { list-style-type: decimal !important; padding-left: 1.5rem !important; margin-bottom: 1em !important; }
 .trix-content li, trix-editor li { display: list-item !important; margin-left: 0 !important; }
